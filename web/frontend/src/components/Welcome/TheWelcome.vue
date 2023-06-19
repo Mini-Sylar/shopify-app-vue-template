@@ -107,8 +107,8 @@ onMounted(() => {
     align-items: center;
 }
 
-.create-sample-product button {
-    padding: 0.5rem 1rem;
+button {
+    padding: 0.8rem 1rem;
     border-radius: 0.5rem;
     border: none;
     background-color: #000;
@@ -116,7 +116,7 @@ onMounted(() => {
     cursor: pointer;
 }
 
-.create-sample-product button:hover {
+button:hover {
     background-color: #333;
 }
 
