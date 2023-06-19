@@ -31,14 +31,58 @@
             <h2>Total Products</h2>
             <p>Product Count...</p>
             <div class="create-sample-product">
-                <button>Create 5 Sample Products</button>
+                <button @click.prevent="addProducts">Create 5 Sample Products</button>
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
+import { Loading, Toast } from '@shopify/app-bridge/actions';
+import { ref, inject } from 'vue';
+const appBridge = inject("useAppBridge")
+const buttonDisabled = ref(false)
 
+const useToast = (message, isError = false) => {
+    const toast = Toast.create(appBridge, {
+        message: message,
+        duration: 3000,
+        isError: isError
+    })
+    toast.dispatch(Toast.Action.SHOW)
+}
+
+function addProducts() {
+    buttonDisabled.value = true
+    const loading = Loading.create(appBridge)
+    loading.dispatch(Loading.Action.START)
+    // simulate api call
+    setTimeout(() => {
+        loading.dispatch(Loading.Action.STOP)
+        buttonDisabled.value = false
+        useToast('Successfully created 5 sample products')
+    }, 2000)
+
+
+    // fetch('/api/products', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({ count: 5 })
+    // })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         loading.dispatch(Loading.Action.STOP)
+    //         buttonDisabled.value = false
+    //         useToast('Successfully created 5 sample products')
+    //     })
+    //     .catch(error => {
+    //         loading.dispatch(Loading.Action.STOP)
+    //         buttonDisabled.value = false
+    //         useToast('Error creating sample products', true)
+    //     })
+}
 </script>
 
 <style scoped>
@@ -79,5 +123,4 @@
 .create-sample-product button:hover {
     background-color: #333;
 }
-
 </style>
