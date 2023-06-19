@@ -4,7 +4,7 @@ const host = new URLSearchParams(location.search).get('host') || window.__SHOPIF
 
 window.__SHOPIFY_DEV_HOST = host
 
-export const shopifyPlugin = {
+export const shopifyAppBridgePlugin = {
   install: (app) => {
     const appBridge = createApp({
       apiKey: process.env.SHOPIFY_API_KEY,
