@@ -15,6 +15,10 @@
   opacity: 0;
 }
 
+body {
+  font-family: sans-serif;
+}
+
 .main-container {
   width: min(90%, 1200px);
   margin: 0 auto;
