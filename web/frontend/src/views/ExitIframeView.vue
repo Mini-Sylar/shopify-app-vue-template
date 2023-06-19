@@ -1,11 +1,7 @@
 <template>
-    <div>
-        ExitIframeView
-    </div>
+  <div>ExitIframeView</div>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>
 
 <style scoped></style>
