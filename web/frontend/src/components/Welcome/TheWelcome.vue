@@ -12,15 +12,15 @@
         </p>
         <h3>Features</h3>
         <ul>
-          <li>Vue 3.3 - Latest vue version</li>
-          <li>Vue Router - For single page navigation</li>
-          <li>Pinia - For state management</li>
+          <li>Vue 3.3 🟢</li>
+          <li>Vue Router🔗 - For single page navigation</li>
+          <li>Pinia🍍 - For state management</li>
         </ul>
         <hr />
         <ul>
-          <li>vueAuthenticatedFetch - for making authenticated requests to your backend</li>
+          <li>vueAuthenticatedFetch 🚀  - for making authenticated requests to your backend</li>
           <li>
-            AppBridge integration - Allows you to use various app bridge actions, see
+            AppBridge integration🚉 - Allows you to use various app bridge actions, see
             <a href="#">AppBridge</a>
           </li>
         </ul>
