@@ -2,7 +2,8 @@
     <div class="main-container">
         <div class="card">
             <div class="left-text">
-                <h2>Nice work on building a shopify app with a <a href="#">Vue Template</a>💚</h2>
+                <h2>Nice work on building a shopify app with a <a href="https://vuejs.org/guide/introduction.html"
+                        target="_blank">Vue Template</a>💚</h2>
                 <p>Your app is ready to explore, it contains everything you would need to build your awesome app!</p>
                 <h3>Features</h3>
                 <ul>
@@ -16,8 +17,11 @@
                     <li>AppBridge integration - Allows you to use various app bridge actions, see <a href="#">AppBridge</a>
                     </li>
                 </ul>
-                <p>Learn more about building out your app in <a href="#">this shopify tutorial</a></p>
-                <p>This starter template is available on <a href="#">Github</a></p>
+                <p>Learn more about building out your app in <a
+                        href="https://shopify.dev/docs/apps/getting-started/existing" target="_blank">this shopify
+                        tutorial</a></p>
+                <p>This starter template is available on <a href="https://github.com/Mini-Sylar/shopify-app-vue-template"
+                        target="_blank">Github</a></p>
             </div>
             <div class="right-image">
                 <img src="@/assets/images/home-trophy-vue.png" alt="Successfully created app with vue template">

@@ -1,7 +1,10 @@
 <template>
-  <div>
-
-  </div>
+  <main>
+    <TheWelcomeAbout />
+  </main>
 </template>
 
-<style></style>
+<script setup>
+import TheWelcomeAbout from '../components/About/TheWelcomeAbout.vue';
+
+</script>
