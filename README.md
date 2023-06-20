@@ -22,6 +22,7 @@ This is a template for building Shopify apps using Vue.js as the frontend. It is
 
 - `AppBridge` Plugin for Vue to use [Shopify App Bridge](https://shopify.dev/tools/app-bridge) actions and components
 - `vueAuthenticatedFetch` to make authenticated requests to the Shopify API and your backend.
+- App embedding
 
 ## What is not included?
 
