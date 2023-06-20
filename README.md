@@ -1,6 +1,8 @@
 # Shopify App Template Using Vue
 
-This is a template for building Shopify apps using Vue.js as the frontend. It is based on the [Shopify App Node](https://github.com/Shopify/shopify-app-template-node) template. If you would like to use React instead, check out [Creating a shopify app](https://shopify.dev/docs/apps/getting-started/create)
+This is a template for building Shopify apps using Vue.js as the frontend. It is based on the [Shopify App Node](https://github.com/Shopify/shopify-app-template-node) template. If you would like to use React instead, check out [Creating a shopify app](https://shopify.dev/docs/apps/getting-started/create).
+
+Nothing modified on the backend, uses the same starter template from the one generated from shopify cli.🔥
 
 ## Getting Started
 
@@ -18,11 +20,30 @@ This is a template for building Shopify apps using Vue.js as the frontend. It is
 - [Pinia](https://pinia.esm.dev/) for state management
 - [EsLint](https://eslint.org/) for linting
 
+<br>
+
 ### Shopify 🛍
 
 - `AppBridge` Plugin for Vue to use [Shopify App Bridge](https://shopify.dev/tools/app-bridge) actions and components
 - `vueAuthenticatedFetch` to make authenticated requests to the Shopify API and your backend.
 - App embedding
+
+<br>
+
+### Storage 💽
+
+Uses SQLite as the db, same as the template see [the supported databases](https://github.com/Shopify/shopify-app-template-node#application-storage).
+
+To use one of these, you need to change your session storage configuration. To help, here’s a list of SessionStorage adapter packages. [Storage Drivers](https://github.com/Shopify/shopify-api-js/blob/main/docs/guides/session-storage.md)
+
+<br>
+
+### Deployment 🚀
+
+- See [Deploying shopify apps](https://github.com/Shopify/shopify-app-template-node#deployment)
+
+<br>
+<hr>
 
 ## What is not included?
 
