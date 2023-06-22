@@ -51,6 +51,8 @@ To use one of these, you need to change your session storage configuration. To h
 
 You can always access certain polaris components using the `appBridge` but if you want to use the full suite of components, you can use [Shopify Polaris Vue](https://github.com/ownego/polaris-vue). Install this in the `frontend` directory and follow the instructions in the README.
 
+<br>
+
 ## What next?
 
 Here are some useful links to get you started:
