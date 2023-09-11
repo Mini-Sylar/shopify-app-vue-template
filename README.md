@@ -67,3 +67,6 @@ Here are some useful links to get you started:
 
 ## Screenshots
 ![Screenshot](https://drive.google.com/uc?id=1775c1Bnkow-5w4gEjtGREMoi_xN31t10)
+
+## App Submission
+Built an app using this template? Submit it here [App submission url](https://forms.gle/K8VGCqvcvfBRSug58)
