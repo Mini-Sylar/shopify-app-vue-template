@@ -18,7 +18,7 @@
         </ul>
         <hr />
         <ul>
-          <li>vueAuthenticatedFetch 🚀  - for making authenticated requests to your backend</li>
+          <li>vueAuthenticatedFetch 🚀 - for making authenticated requests to your backend</li>
           <li>
             AppBridge integration🚉 - Allows you to use various app bridge actions, see
             <a href="#">AppBridge</a>
