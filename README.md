@@ -1,6 +1,8 @@
 # Shopify App Template Using Vue 🟢
 
-This is a template for building Shopify apps using Vue.js as the frontend. It is based on the [Shopify App Node](https://github.com/Shopify/shopify-app-template-node) template. If you would like to use React instead, check out [Creating a shopify app](https://shopify.dev/docs/apps/getting-started/create).
+![Screenshot](https://drive.google.com/uc?id=1VKbiGd09QJ9c_TjpffQ5zasqxVLzqfgc)
+
+A template for building Shopify apps using Vue.js as the frontend. It is based on the [Shopify App Node](https://github.com/Shopify/shopify-app-template-node) template.
 
 Nothing modified on the backend, uses the same starter template from the one generated from shopify cli.🔥
 
