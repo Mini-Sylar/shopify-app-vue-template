@@ -1,19 +1,11 @@
 import { authenticatedFetch } from '@shopify/app-bridge/utilities'
-import { createApp } from '@shopify/app-bridge'
 import { Redirect } from '@shopify/app-bridge/actions'
+import { initAppBridge } from '../plugins/appBridge'
 
-export function useAuthenticatedFetchVue() {
-  const host = new URLSearchParams(location.search).get('host') || window.__SHOPIFY_DEV_HOST
-
-  window.__SHOPIFY_DEV_HOST = host
-  const appBridge = createApp({
-    apiKey: process.env.SHOPIFY_API_KEY,
-    host: host,
-    forceRedirect: true
-  })
+export function useAuthenticatedFetch() {
+  const appBridge = initAppBridge()
   const app = appBridge
   const fetchFunction = authenticatedFetch(app)
-
   return async (uri, options) => {
     const response = await fetchFunction(uri, options)
     checkHeadersForReauthorization(response.headers, app)

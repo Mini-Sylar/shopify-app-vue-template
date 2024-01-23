@@ -4,7 +4,7 @@
       <div class="left-text">
         <h2>
           Nice work on building a shopify app with a
-          <a href="https://vuejs.org/guide/introduction.html" target="_blank">Vue Template</a>💚
+          <a href="https://shopify-vue-template.vercel.app/" target="_blank">Vue Template</a>💚
         </h2>
         <p>
           Your app is ready to explore, it contains everything you would need to build your awesome
@@ -12,9 +12,9 @@
         </p>
         <h3>Features</h3>
         <ul>
-          <li>Vue 3.3 🟢</li>
-          <li>Vue Router🔗 - For single page navigation</li>
-          <li>Pinia🍍 - For state management</li>
+          <li><a href="https://vuejs.org/guide/introduction.html" target="_blank">Vue {{ version }}</a>🟢 - As your frontend framework</li>
+          <li><a href="https://router.vuejs.org/guide/" target="_blank">Vue Router</a>🔗 - For single page navigation</li>
+          <li><a href="https://pinia.vuejs.org/getting-started.html" target="_blank">Pinia</a>🍍 - For state management</li>
         </ul>
         <hr />
         <ul>
@@ -65,7 +65,7 @@
 <script setup>
 import { Loading, Toast } from '@shopify/app-bridge/actions'
 import { useProductCounterStore } from '@/stores/counter.js'
-import { ref, inject, onMounted, computed } from 'vue'
+import { ref, inject, onMounted, computed,version } from 'vue'
 const appBridge = inject('useAppBridge')
 const buttonDisabled = ref(false)
 
@@ -147,5 +147,9 @@ button:disabled,
 button:disabled:hover {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+a{
+  color:#3fad7d;
 }
 </style>
