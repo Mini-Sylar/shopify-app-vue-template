@@ -28,7 +28,7 @@ Nothing modified on the backend, uses the same starter template from the one gen
 
 - `AppBridge` Plugin for Vue to use [Shopify App Bridge](https://shopify.dev/tools/app-bridge) actions and components
 - `useAuthenticatedFetch` to make authenticated requests to the Shopify API and your backend.
-- App embedding
+- `App embedding` - Template is setup to embed your app in the Shopify admin.
 
 <br>
 
