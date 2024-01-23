@@ -17,18 +17,18 @@ Nothing modified on the backend, uses the same starter template from the one gen
 
 ### Vue 💚
 
-- [Vue.js 3.3](https://vuejs.org/)
+- [Vue.js 3.4](https://vuejs.org/)
 - [Vue Router 4](https://router.vuejs.org/) for single page app routing
 - [Pinia](https://pinia.esm.dev/) for state management
-- [EsLint](https://eslint.org/) for linting
+- [EsLint](https://eslint.org/) for static code analysis
 
 <br>
 
 ### Shopify 🛍
 
 - `AppBridge` Plugin for Vue to use [Shopify App Bridge](https://shopify.dev/tools/app-bridge) actions and components
-- `vueAuthenticatedFetch` to make authenticated requests to the Shopify API and your backend.
-- App embedding
+- `useAuthenticatedFetch` to make authenticated requests to the Shopify API and your backend.
+- `App embedding` - Template is setup to embed your app in the Shopify admin.
 
 <br>
 
