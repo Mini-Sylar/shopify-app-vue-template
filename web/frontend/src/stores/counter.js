@@ -1,10 +1,10 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import { useAuthenticatedFetchVue } from '../helpers/vueAuthenticatedFetch.js'
+import { useAuthenticatedFetch } from '../helpers/useAuthenticatedFetch'
 
 export const useProductCounterStore = defineStore('productCounter', () => {
   const count = ref(0)
-  const fetch = useAuthenticatedFetchVue()
+  const fetch = useAuthenticatedFetch()
 
   const getProducts = async () => {
     try {
