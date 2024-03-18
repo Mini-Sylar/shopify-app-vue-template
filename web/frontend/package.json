@@ -12,16 +12,16 @@
   "dependencies": {
     "@shopify/app-bridge": "^3.7.10",
     "pinia": "^2.1.7",
-    "vue": "^3.4.15",
-    "vue-router": "^4.2.5"
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.7.0",
-    "@vitejs/plugin-vue": "^5.0.3",
+    "@rushstack/eslint-patch": "^1.7.2",
+    "@vitejs/plugin-vue": "^5.0.4",
     "@vue/eslint-config-prettier": "^9.0.0",
-    "eslint": "^8.56.0",
-    "eslint-plugin-vue": "^9.20.1",
-    "prettier": "^3.2.4",
-    "vite": "^5.0.12"
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.23.0",
+    "prettier": "^3.2.5",
+    "vite": "^5.1.6"
   }
 }
