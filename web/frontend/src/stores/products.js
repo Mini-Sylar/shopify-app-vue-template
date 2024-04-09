@@ -13,7 +13,7 @@ export const useProductCounterStore = defineStore('productCounter', () => {
         throw new Error(`Failed to fetch product count: ${response.status}`)
       }
       const data = await response.json()
-      count.value = data.count
+      count.value = data.productsCount.count
     } catch (error) {
       console.log(`Failed to fetch product count: ${error.message}`)
     }
@@ -32,7 +32,8 @@ export const useProductCounterStore = defineStore('productCounter', () => {
       await getProducts()
       return data
     } catch (error) {
-      console.log(`Failed to create products: ${error.message}`)
+      console.error(`Failed to create products: ${error.message}`)
+      throw error
     }
   }
 

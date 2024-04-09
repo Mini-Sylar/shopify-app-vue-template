@@ -70,16 +70,35 @@ const NOUNS = [
 ];
 
 export const DEFAULT_PRODUCTS_COUNT = 5;
-const CREATE_PRODUCTS_MUTATION = `
-  mutation populateProduct($input: ProductInput!) {
+const CREATE_PRODUCT_MUTATION = `
+  mutation CreateProduct($input: ProductInput!) {
     productCreate(input: $input) {
       product {
         id
+        title
+      }
+      userErrors {
+        field
+        message
       }
     }
   }
 `;
 
+const CREATE_VARIANT_MUTATION = `
+  mutation CreateVariant($input: ProductVariantInput!) {
+    productVariantCreate(input: $input) {
+      productVariant {
+        id
+        price
+      }
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+`;
 export default async function productCreator(
   session,
   count = DEFAULT_PRODUCTS_COUNT
@@ -88,17 +107,27 @@ export default async function productCreator(
 
   try {
     for (let i = 0; i < count; i++) {
-      await client.query({
-        data: {
-          query: CREATE_PRODUCTS_MUTATION,
-          variables: {
-            input: {
-              title: `${randomTitle()}`,
-              variants: [{ price: randomPrice() }],
-            },
+      const productResponse = await client.request(CREATE_PRODUCT_MUTATION, {
+        variables: {
+          input: {
+            title: `${randomTitle()}`,
+            // include other necessary fields here
           },
         },
       });
+      if (productResponse.data.productCreate.userErrors.length === 0) {
+        const productId = productResponse.data.productCreate.product.id;
+
+        await client.request(CREATE_VARIANT_MUTATION, {
+          variables: {
+            input: {
+              productId: productId,
+              price: `${randomPrice()}`,
+              // include other necessary fields here
+            },
+          },
+        });
+      }
     }
   } catch (error) {
     if (error instanceof GraphqlQueryError) {
