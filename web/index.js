@@ -8,6 +8,8 @@ import shopify from "./shopify.js";
 import productCreator from "./product-creator.js";
 import GDPRWebhookHandlers from "./gdpr.js";
 
+import { GraphqlQueryError } from "@shopify/shopify-api";
+
 const PORT = parseInt(
   process.env.BACKEND_PORT || process.env.PORT || "3000",
   10
@@ -40,10 +42,22 @@ app.use("/api/*", shopify.validateAuthenticatedSession());
 app.use(express.json());
 
 app.get("/api/products/count", async (_req, res) => {
-  const countData = await shopify.api.rest.Product.count({
-    session: res.locals.shopify.session,
-  });
-  res.status(200).send(countData);
+  const session = res.locals.shopify.session;
+
+  const client = new shopify.api.clients.Graphql({ session });
+  try {
+    const countData = await client.request(`query{productsCount{count}}`, {
+      retries: 2,
+    });
+    res.status(200).send(countData.data);
+  } catch (error) {
+    if (error instanceof GraphqlQueryError) {
+      console.error(
+        `${error.message}\n${JSON.stringify(error.response, null, 2)}`
+      );
+    }
+    res.status(500).send({ error: "Failed to fetch product count" });
+  }
 });
 
 app.get("/api/products/create", async (_req, res) => {
