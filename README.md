@@ -6,6 +6,7 @@ A template for building Shopify apps using Vue.js as the frontend. It is based o
 
 ## Updating Older Versions 
 See [UPDATE GUIDE](#update-guide-v10x-to-v11x) for updating from older versions of the template.
+Prefer to use GraphQL API for interacting with Shopify. See [Migrating From REST to GraphQL](https://shopify.dev/docs/api/admin/migrate)
 
 ## Getting Started
 
