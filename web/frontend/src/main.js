@@ -9,13 +9,18 @@ import App from './App.vue'
 import router from './router'
 
 import en from './locales/en.json'
+import zh from './locales/zh-CN.json'
+
+
+
 
 const i18n = createI18n({
-  locale: 'en',
+  locale: 'en-US',
   messages: {
-    en
+    'en-US': en,
+    'zh-CN': zh
   },
-  fallbackLocale: 'en'
+  fallbackLocale: 'en-US'
 })
 
 const app = createApp(App)
