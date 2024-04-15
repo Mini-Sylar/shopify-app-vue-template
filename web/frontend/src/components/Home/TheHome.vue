@@ -4,7 +4,9 @@
       <div class="left-text">
         <i18n-t keypath="HomePage.heading" tag="h2" for="link" scope="global">
           <template #link>
-            <a href="https://shopify-vue-template.vercel.app/" target="_blank">Vue Template</a>
+            <a href="https://shopify-vue-template.vercel.app/" target="_blank">{{
+              $t('HomePage.heading-link-text')
+            }}</a>
           </template>
         </i18n-t>
         <p>{{ $t('HomePage.subheading') }}</p>
@@ -123,6 +125,10 @@ onMounted(() => {
   flex-direction: column;
 }
 
+.left-text {
+  flex: 1;
+}
+
 .right-image {
   flex: 1;
   display: flex;
@@ -155,7 +161,13 @@ button:disabled:hover {
   cursor: not-allowed;
 }
 
+
+
 a {
   color: #3fad7d;
+}
+
+li {
+  margin: 0.5rem 0;
 }
 </style>

@@ -5,27 +5,28 @@
   },
   "HomePage": {
     "heading": "Nice work on building a shopify app with a {link}",
+    "heading-link-text" : "Vue Template 💚",
     "subheading": "Your app is ready to explore, it contains everything you would need to build your awesome app!",
     "feature-text": "Features",
     "feature-list-vue": [
       {
         "title": "Vue {version} 🟢",
-        "description": "As your frontend framework",
+        "description": "As your progressive frontend framework",
         "url": "https://vuejs.org/"
       },
       {
         "title": "Vue Router🔗",
-        "description": "For single page navigation",
+        "description": "Expressive, configurable and convenient routing for Vue.js",
         "url": "https://router.vuejs.org/"
       },
       {
         "title": "Pinia🍍",
-        "description": "For state management",
+        "description": "The intuitive client state-management solution for Vue.js",
         "url": "https://pinia.vuejs.org/"
       },
       {
         "title": "vue-i18n-intlify 🌐",
-        "description": "For internationalization and localization",
+        "description": "Internationalization plugin for Vue.js, Easy, powerful, and component-oriented for Vue.js",
         "url": "https://vue-i18n.intlify.dev/"
       }
     ],
