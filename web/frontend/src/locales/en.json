@@ -1,0 +1,53 @@
+{
+  "NavBar": {
+    "home": "Home",
+    "about": "About"
+  },
+  "HomePage": {
+    "heading": "Nice work on building a shopify app with a {link}",
+    "subheading": "Your app is ready to explore, it contains everything you would need to build your awesome app!",
+    "feature-text": "Features",
+    "feature-list-vue": [
+      {
+        "title": "Vue {version} 🟢",
+        "description": "As your frontend framework",
+        "url": "https://vuejs.org/"
+      },
+      {
+        "title": "Vue Router🔗",
+        "description": "For single page navigation",
+        "url": "https://router.vuejs.org/"
+      },
+      {
+        "title": "Pinia🍍",
+        "description": "For state management",
+        "url": "https://pinia.vuejs.org/"
+      },
+      {
+        "title": "vue-i18n-intlify 🌐",
+        "description": "For internationalization and localization",
+        "url": "https://vue-i18n.intlify.dev/"
+      }
+    ],
+    "shopify-features-vue": [
+      "useAuthenticatedFetch 🔐 - Securely call your API endpoints",
+      "AppBridge Integration 🌉 - Communicate with Shopify Admin through AppBridge"
+    ],
+    "useful-links": "Useful Links",
+    "app-bridge": "See {link} for more information on AppBridge",
+    "learn-more": "Learn more about building out your app in {link}",
+    "this-shopify-tutorial": "this Shopify tutorial",
+    "starter-available": "This starter template is available on {link}"
+  },
+  "Products": {
+    "heading": "Product Counter",
+    "subheading": "Sample Products are created with a default title and price. You can remove them at any time",
+    "total-products": "Total Products",
+    "button-text": "Create Sample Products"
+  },
+  "About": {
+    "heading": "About",
+    "line-1": "There are little or no references to using Vue as your frontend framework when building shopify apps even though Vue is a popular javascript framework.",
+    "line-2": "This starter template aims to resolve this by providing all the necessary tools to build the next big shopify app using Vue JS."
+  }
+}
