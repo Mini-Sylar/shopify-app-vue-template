@@ -1,5 +1,7 @@
 import { nextTick } from 'vue'
 import { createI18n } from 'vue-i18n'
+import en from './locales/en.json'
+import zh from './locales/zh.json'
 
 export const SUPPORT_LOCALES = ['en', 'zh']
 
@@ -29,5 +31,15 @@ export async function loadLocaleMessages(i18n, locale) {
   // set locale and locale message
   i18n.global.setLocaleMessage(locale, messages.default)
 
-  return await nextTick()
+  return nextTick()
 }
+
+export const i18n = setupI18n({
+  locale: new URLSearchParams(window.location.search).get('locale') || 'en',
+  messages: {
+    en,
+    zh
+  },
+  fallbackLocale: 'en',
+  legacy: false
+})

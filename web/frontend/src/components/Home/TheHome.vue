@@ -76,7 +76,9 @@ import { useProductCounterStore } from '@/stores/products.js'
 import { ref, inject, onMounted, computed, version } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
+const { t } = useI18n({
+  useScope: 'global'
+})
 const appBridge = inject('useAppBridge')
 const buttonDisabled = ref(false)
 
