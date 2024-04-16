@@ -21,10 +21,8 @@ export const i18n = setupI18n({
 })
 
 const app = createApp(App)
+app.use(ShopifyAppBridge)
 app.use(i18n)
 app.use(router)
-app.use(ShopifyAppBridge)
-
 app.use(createPinia())
-
 app.mount('#app')
