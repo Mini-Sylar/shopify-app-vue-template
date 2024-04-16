@@ -92,9 +92,9 @@ Here are some useful links to get you started:
 
 ## Screenshots
 
-![Screenshot-en](https://drive.google.com/file/d/1p32XhaiVRQ9eSAmNQ1Hk2T-V5hmb9CFa/view?usp=sharing)
+![Screenshot](https://drive.google.com/uc?id=1p32XhaiVRQ9eSAmNQ1Hk2T-V5hmb9CFa)
 
-![Screenshot-zh](https://drive.google.com/file/d/1yCr3lc3yqzgyV3ZiTSJjlIEVPtNY27LX/view?usp=sharing)
+![Screenshot](https://drive.google.com/uc?id=1yCr3lc3yqzgyV3ZiTSJjlIEVPtNY27LX)
 
 ## App Submission
 
