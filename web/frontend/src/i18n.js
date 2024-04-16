@@ -31,7 +31,7 @@ export async function loadLocaleMessages(i18n, locale) {
   // set locale and locale message
   i18n.global.setLocaleMessage(locale, messages.default)
 
-  return nextTick()
+  return await nextTick()
 }
 
 export const i18n = setupI18n({
