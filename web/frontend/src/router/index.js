@@ -27,6 +27,10 @@ const router = createRouter({
       name: 'exitiframe',
       component: () => import('../views/ExitIframeView.vue'),
       redirect: { name: 'home' }
+    },
+    {
+      path: '/pathMatch(.*)',
+      component: () => import('../views/NotFoundView.vue')
     }
   ]
 })
