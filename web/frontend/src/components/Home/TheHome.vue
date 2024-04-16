@@ -74,7 +74,9 @@
 import { Loading, Toast } from '@shopify/app-bridge/actions'
 import { useProductCounterStore } from '@/stores/products.js'
 import { ref, inject, onMounted, computed, version } from 'vue'
+import { useI18n } from 'vue-i18n'
 
+const { t } = useI18n()
 const appBridge = inject('useAppBridge')
 const buttonDisabled = ref(false)
 
@@ -97,9 +99,9 @@ async function addProducts() {
   useToast('Creating products')
   try {
     await useProductCounterStore().createProducts()
-    useToast('Successfully created products')
+    useToast(t('Products.products-success'))
   } catch (error) {
-    useToast('Error creating products', true)
+    useToast(t('Products.products-error'), true)
   } finally {
     buttonDisabled.value = false
     await appBridge.dispatch(Loading.Action.STOP)

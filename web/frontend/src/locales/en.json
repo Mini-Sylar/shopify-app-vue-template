@@ -44,7 +44,9 @@
     "heading": "Product Counter",
     "subheading": "Sample Products are created with a default title and price. You can remove them at any time",
     "total-products": "Total Products",
-    "button-text": "Create Sample Products"
+    "button-text": "Create Sample Products",
+    "products-success": "Successfully created products",
+    "products-error": "Error creating products"
   },
   "About": {
     "heading": "About",

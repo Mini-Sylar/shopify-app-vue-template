@@ -44,7 +44,9 @@
     "heading": "产品计数器",
     "subheading": "示例产品以默认标题和价格创建。您可以随时删除它们",
     "total-products": "总产品",
-    "button-text": "创建示例产品"
+    "button-text": "创建示例产品",
+    "products-success": "成功创建产品",
+    "products-error": "创建产品时出错"
   },
   "About": {
     "heading": "关于",
