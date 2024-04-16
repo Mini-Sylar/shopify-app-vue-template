@@ -3,29 +3,27 @@ import { ShopifyAppBridge } from '@/plugins/appBridge.js'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import { createI18n } from 'vue-i18n'
+import { setupI18n } from './i18n'
 
 import App from './App.vue'
 import router from './router'
 
 import en from './locales/en.json'
-import zh from './locales/zh-CN.json'
+import zh from './locales/zh.json'
 
-
-
-
-const i18n = createI18n({
-  locale: 'en-US',
+export const i18n = setupI18n({
+  locale: new URLSearchParams(window.location.search).get('locale') || 'en',
   messages: {
-    'en-US': en,
-    'zh-CN': zh
+    en,
+    zh
   },
-  fallbackLocale: 'en-US'
+  fallbackLocale: 'en'
 })
 
 const app = createApp(App)
+
+// app.use(ShopifyAppBridge)
 app.use(i18n)
-app.use(ShopifyAppBridge)
 app.use(createPinia())
 app.use(router)
 

@@ -5,7 +5,7 @@
   },
   "HomePage": {
     "heading": "Nice work on building a shopify app with a {link}",
-    "heading-link-text" : "Vue Template 💚",
+    "heading-link-text": "Vue Template 💚",
     "subheading": "Your app is ready to explore, it contains everything you would need to build your awesome app!",
     "feature-text": "Features",
     "feature-list-vue": [
