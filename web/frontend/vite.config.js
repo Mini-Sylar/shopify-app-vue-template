@@ -1,7 +1,7 @@
+/* eslint-disable no-undef */
 import { defineConfig } from 'vite'
 import { dirname } from 'path'
 import { fileURLToPath } from 'url'
-import https from 'https'
 import vue from '@vitejs/plugin-vue'
 
 if (
