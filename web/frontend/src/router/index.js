@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import AboutView from '../views/AboutView.vue'
 import { setI18nLanguage, SUPPORT_LOCALES, loadLocaleMessages } from '@/i18n'
 import { i18n } from '@/main'
 
@@ -17,8 +18,7 @@ const router = createRouter({
         {
           path: 'about',
           name: 'about',
-          // lazy load your component
-          component: () => import('../views/AboutView.vue')
+          component: AboutView
         }
       ]
     },
