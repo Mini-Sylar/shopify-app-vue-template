@@ -161,8 +161,6 @@ button:disabled:hover {
   cursor: not-allowed;
 }
 
-
-
 a {
   color: #3fad7d;
 }
