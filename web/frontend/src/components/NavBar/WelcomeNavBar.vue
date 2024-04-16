@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav>
+    <nav class="main-container">
       <ul>
         <li>
           <RouterLink
@@ -32,7 +32,7 @@ import LanguageSwitcher from './LanguageSwitcher.vue'
 <style scoped>
 nav {
   background-color: #f2f2f2;
-  padding: 1rem;
+  padding-block: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
