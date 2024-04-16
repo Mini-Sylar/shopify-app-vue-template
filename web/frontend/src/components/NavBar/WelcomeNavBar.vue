@@ -45,4 +45,9 @@ ul {
   list-style: none;
   gap: 1rem;
 }
+
+.router-link-exact-active {
+  color: #3fad7d;
+  font-weight: 500;
+}
 </style>
