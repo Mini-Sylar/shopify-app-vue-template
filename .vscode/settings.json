@@ -1,0 +1,4 @@
+{
+  "i18n-ally.localesPaths": ["web/frontend/src/locales"],
+  "i18n-ally.keystyle": "flat"
+}
