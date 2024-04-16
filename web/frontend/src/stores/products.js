@@ -4,11 +4,11 @@ import { useAuthenticatedFetch } from '../helpers/useAuthenticatedFetch'
 
 export const useProductCounterStore = defineStore('productCounter', () => {
   const count = ref(0)
-  const fetch = useAuthenticatedFetch()
+  const useFetch = useAuthenticatedFetch()
 
   const getProducts = async () => {
     try {
-      const response = await fetch('/api/products/count')
+      const response = await useFetch('/api/products/count')
       if (!response.ok) {
         throw new Error(`Failed to fetch product count: ${response.status}`)
       }
@@ -21,7 +21,7 @@ export const useProductCounterStore = defineStore('productCounter', () => {
 
   const createProducts = async () => {
     try {
-      const response = await fetch('/api/products/create')
+      const response = await useFetch('/api/products/create')
       if (!response.ok) {
         throw new Error(`Failed to create products: ${response.status}`)
       }

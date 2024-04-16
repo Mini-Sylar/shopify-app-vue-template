@@ -1,6 +1,5 @@
 // @ts-nocheck
 
-
 import { createApp } from '@shopify/app-bridge'
 export const initAppBridge = () => {
   const host = new URLSearchParams(location.search).get('host') || window.__SHOPIFY_DEV_HOST
