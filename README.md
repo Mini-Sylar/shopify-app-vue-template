@@ -4,7 +4,19 @@
 
 A template for building Shopify apps using Vue.js as the frontend. It is based on the [Shopify App Node](https://github.com/Shopify/shopify-app-template-node) template.
 
-## Updating Older Versions 
+## Table of Contents
+
+- [Getting Started](#getting-started)
+- [What is included?](#what-is-included)
+- [Internationlization](#internationlization)
+- [Update Guide](#update-guide-v10x-to-v11x)
+- [What next?](#what-next)
+- [Screenshots](#screenshots)
+- [App Submission](#app-submission)
+- [License](#license)
+
+## Updating Older Versions
+
 See [UPDATE GUIDE](#update-guide-v10x-to-v11x) for updating from older versions of the template.
 Prefer to use GraphQL API for interacting with Shopify. See [Migrating From REST to GraphQL](https://shopify.dev/docs/api/admin/migrate)
 
@@ -21,17 +33,34 @@ Prefer to use GraphQL API for interacting with Shopify. See [Migrating From REST
 
 - [Vue.js 3.4](https://vuejs.org/)
 - [Vue Router 4](https://router.vuejs.org/) for single page app routing
+- [Vue i18n](https://vue-i18n.intlify.dev/) for app localization
 - [Pinia](https://pinia.esm.dev/) for state management
 - [EsLint](https://eslint.org/) for static code analysis
+- [Prettier](https://prettier.io/) for code formatting
 
 <br>
+
+## Internationalization 🌍🆕
+
+### Adding a new translation
+
+- Use `Vue i18n` for app localization. To add a new language, create a new json file in the [`Locales Folder`](./web/frontend/src/locales/) folder and add the translations. See [i18n.js](./web/frontend/src/i18n.js) for setup.
+
+- All translatiion files are lazily loaded, meaning only the translations for the current language are loaded.
+
+- Default language is what is returned by shopify reading the `locale` query parameter. If not set, it fallbacks to `en`.
+
+- Vue Router will embed the language in the URL, e.g `localhost:3000/en` or `localhost:3000/zh/about`
+
+- The template has been localized, see [Locales Folder](./web/frontend/src/locales/) folder. Translations may not be 100% accurate so pull requests are welcome.
+
+<hr>
 
 ### Shopify 🛍
 
 - `AppBridge` Plugin for Vue to use [Shopify App Bridge](https://shopify.dev/tools/app-bridge) actions and components
 - `useAuthenticatedFetch` to make authenticated requests to the Shopify API and your backend.
 - `App embedding` - Template is setup to embed your app in the Shopify admin.
-
 
 <br>
 
@@ -50,7 +79,6 @@ To use one of these, you need to change your session storage configuration. To h
 <br>
 <hr>
 
-
 ## What next?
 
 Here are some useful links to get you started:
@@ -62,13 +90,15 @@ Here are some useful links to get you started:
 - [Pinia](https://pinia.vuejs.org/introduction.html)
 - [Vue Router](https://router.vuejs.org/guide/#html)
 
-
 ## Screenshots
-![Screenshot](https://drive.google.com/uc?id=1775c1Bnkow-5w4gEjtGREMoi_xN31t10)
+
+![Screenshot](https://drive.google.com/uc?id=1p32XhaiVRQ9eSAmNQ1Hk2T-V5hmb9CFa)
+
+![Screenshot](https://drive.google.com/uc?id=1yCr3lc3yqzgyV3ZiTSJjlIEVPtNY27LX)
 
 ## App Submission
-Built an app using this template? Submit it here [App submission url](https://forms.gle/K8VGCqvcvfBRSug58)
 
+Built an app using this template? Submit it here [App submission url](https://forms.gle/K8VGCqvcvfBRSug58)
 
 # UPDATE Guide (v.1.0.x to v.1.1.x)
 
@@ -77,7 +107,6 @@ It seems Shopify has decided to fully deprecate the React Template. It's no long
 As at `April 2024` Shopify has also deprecated a lot of the old APIs, Sadly, ProductCreate was also affected
 
 It is now recommended to use `Shopify GraphQL API` for interacting with Shopify. See [Migrating From REST to GraphQL](https://shopify.dev/docs/api/admin/migrate)
-
 
 To update your app to the latest version of the template, follow the steps below:
 
@@ -132,8 +161,8 @@ HINT: You can you use [npm-check-updates
   }
 ```
 
-
 ## 2. Update Imports
+
 - In [Shopify.js](./web/shopify.js) update the import to use the new `shopify` APis
 
 ```JS
@@ -143,4 +172,5 @@ import { restResources } from "@shopify/shopify-api/rest/admin/2024-04";
 ```
 
 ### 3. Optional
+
 If using the `ProductCreate` mutation, See [Migrating From REST to GraphQL](https://shopify.dev/docs/api/admin/migrate) for the new way to create products, there's an example in [PRODUCTCREATE](./web/product-creator.js)

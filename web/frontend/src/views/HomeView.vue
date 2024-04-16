@@ -1,9 +1,9 @@
 <script setup>
-import HomeHero from '../components/Home/HomeHero.vue'
+import TheHome from '../components/Home/TheHome.vue'
 </script>
 
 <template>
   <main>
-    <HomeHero />
+    <TheHome />
   </main>
 </template>

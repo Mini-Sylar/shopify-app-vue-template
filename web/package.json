@@ -1,6 +1,6 @@
 {
-  "name": "shopify-app-template-node",
-  "version": "1.0.0",
+  "name": "shopify-app-node-backend",
+  "version": "1.1.0",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "type": "module",
   "engines": {
-    "node": ">=14.13.1"
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "@shopify/shopify-app-express": "^4.1.4",

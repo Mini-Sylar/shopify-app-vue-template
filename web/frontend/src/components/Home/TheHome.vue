@@ -2,69 +2,68 @@
   <div class="main-container">
     <div class="card">
       <div class="left-text">
-        <h2>
-          Nice work on building a shopify app with a
-          <a href="https://shopify-vue-template.vercel.app/" target="_blank">Vue Template</a>💚
-        </h2>
-        <p>
-          Your app is ready to explore, it contains everything you would need to build your awesome
-          app!
-        </p>
-        <h3>Features</h3>
+        <i18n-t keypath="HomePage.heading" tag="h2" for="link" scope="global">
+          <template #link>
+            <a href="https://shopify-vue-template.vercel.app/" target="_blank">{{
+              $t('HomePage.heading-link-text')
+            }}</a>
+          </template>
+        </i18n-t>
+        <p>{{ $t('HomePage.subheading') }}</p>
+        <h3>{{ $t('HomePage.feature-text') }}</h3>
         <ul>
-          <li>
-            <a href="https://vuejs.org/guide/introduction.html" target="_blank">Vue {{ version }}</a
-            >🟢 - As your frontend framework
-          </li>
-          <li>
-            <a href="https://router.vuejs.org/guide/" target="_blank">Vue Router</a>🔗 - For single
-            page navigation
-          </li>
-          <li>
-            <a href="https://pinia.vuejs.org/getting-started.html" target="_blank">Pinia</a>🍍 - For
-            state management
+          <li v-for="(translation, index) in $tm('HomePage.feature-list-vue')" :key="index">
+            <a :href="translation.url">{{ translation.title.replace('{version}', version) }}</a>
+            -
+            <span>{{ translation.description }}</span>
           </li>
         </ul>
         <hr />
         <ul>
-          <li>useAuthenticatedFetch 🚀 - for making authenticated requests to your backend</li>
-          <li>
-            AppBridge integration🚉 - Allows you to use various app bridge actions, see
-            <a href="#">AppBridge</a>
+          <li v-for="(shopifyFeature, index) in $tm('HomePage.shopify-features-vue')" :key="index">
+            {{ shopifyFeature }}
           </li>
         </ul>
-        <p>
-          Learn more about building out your app in
-          <a href="https://shopify.dev/docs/apps/getting-started/existing" target="_blank"
-            >this shopify tutorial</a
-          >
-        </p>
-        <p>
-          This starter template is available on
-          <a href="https://github.com/Mini-Sylar/shopify-app-vue-template" target="_blank"
-            >Github</a
-          >
-        </p>
+        <h3>{{ $t('HomePage.useful-links') }}</h3>
+        <i18n-t keypath="HomePage.app-bridge" tag="p" for="link" scope="global">
+          <template #link>
+            <a href="https://shopify.dev/docs/api/app-bridge" target="_blank">App Bridge</a>
+          </template>
+        </i18n-t>
+        <i18n-t keypath="HomePage.learn-more" tag="p" for="link" scope="global">
+          <template #link>
+            <a href="https://shopify.dev/docs/apps/getting-started/existing" target="_blank">
+              {{ $t('HomePage.this-shopify-tutorial') }}</a
+            >
+          </template>
+        </i18n-t>
+        <i18n-t keypath="HomePage.starter-available" tag="p" for="link" scope="global">
+          <template #link>
+            <a href="https://github.com/Mini-Sylar/shopify-app-vue-template" target="_blank">
+              Github</a
+            >
+          </template>
+        </i18n-t>
       </div>
       <div class="right-image">
         <img
           src="@/assets/images/home-trophy-vue.png"
-          alt="Successfully created app with vue template"
+          alt="Successfully created app with vue template image"
         />
       </div>
     </div>
 
     <div class="card product-counter">
-      <h2>Product Counter</h2>
+      <h2>{{ $t('Products.heading') }}</h2>
       <p>
-        Sample Products are created with a default title and price. You can remove them at any time
+        {{ $t('Products.subheading') }}
       </p>
       <br />
-      <h2>Total Products</h2>
+      <h2>{{ $t('Products.total-products') }}</h2>
       <h3>{{ currentProductCount }}</h3>
       <div class="create-sample-product">
         <button @click.prevent="addProducts" :disabled="buttonDisabled">
-          Create Sample Products
+          {{ $t('Products.button-text') }}
         </button>
       </div>
     </div>
@@ -75,6 +74,11 @@
 import { Loading, Toast } from '@shopify/app-bridge/actions'
 import { useProductCounterStore } from '@/stores/products.js'
 import { ref, inject, onMounted, computed, version } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n({
+  useScope: 'global'
+})
 const appBridge = inject('useAppBridge')
 const buttonDisabled = ref(false)
 
@@ -97,9 +101,9 @@ async function addProducts() {
   useToast('Creating products')
   try {
     await useProductCounterStore().createProducts()
-    useToast('Successfully created products')
+    useToast(t('Products.products-success'))
   } catch (error) {
-    useToast('Error creating products', true)
+    useToast(t('Products.products-error'), true)
   } finally {
     buttonDisabled.value = false
     await appBridge.dispatch(Loading.Action.STOP)
@@ -123,6 +127,10 @@ onMounted(() => {
 
 .product-counter {
   flex-direction: column;
+}
+
+.left-text {
+  flex: 1;
 }
 
 .right-image {
@@ -159,5 +167,9 @@ button:disabled:hover {
 
 a {
   color: #3fad7d;
+}
+
+li {
+  margin: 0.5rem 0;
 }
 </style>

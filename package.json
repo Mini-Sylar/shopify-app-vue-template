@@ -1,8 +1,8 @@
 {
-  "name": "my-node-app",
-  "version": "1.1.0",
+  "name": "my-node-shopify-app",
+  "version": "1.2.0",
   "main": "web/index.js",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "shopify": "shopify",
     "build": "shopify app build",

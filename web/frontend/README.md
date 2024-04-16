@@ -1,35 +1,60 @@
 # frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+Frontend for shopify-app-vue-template. Dependencies are automatically installed when you run `npm run dev` from the root directory.
 
-## Recommended IDE Setup
+## Installed Dependencies
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- Vue Router
+- Pinia
+- Vue i18n
 
-## Customize configuration
+## Project Structure
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+```├─ frontend
+    ├─ .eslintrc.cjs
+     ├─ .gitignore
+     ├─ .prettierrc.json
+     ├─ index.html
+     ├─ jsconfig.json
+     ├─ package-lock.json
+     ├─ package.json
+     ├─ public
+     │  └─ favicon.ico
+     ├─ README.md
+     ├─ shopify.web.toml
+     ├─ src
+     │  ├─ App.vue
+     │  ├─ assets
+     │  │  ├─ base.css
+     │  │  ├─ images
+     │  │  │  └─ home-trophy-vue.png
+     │  │  └─ main.css
+     │  ├─ components
+     │  │  ├─ About
+     │  │  │  └─ TheAbout.vue
+     │  │  ├─ Home
+     │  │  │  └─ TheHome.vue
+     │  │  └─ NavBar
+     │  │     ├─ LanguageSwitcher.vue
+     │  │     └─ WelcomeNavBar.vue
+     │  ├─ helpers
+     │  │  └─ useAuthenticatedFetch.js
+     │  ├─ i18n.js
+     │  ├─ locales
+     │  │  ├─ en.json
+     │  │  └─ zh.json
+     │  ├─ main.js
+     │  ├─ plugins
+     │  │  └─ appBridge.js
+     │  ├─ router
+     │  │  └─ index.js
+     │  ├─ stores
+     │  │  └─ products.js
+     │  └─ views
+     │     ├─ AboutView.vue
+     │     ├─ ExitIframeView.vue
+     │     ├─ HomeView.vue
+     │     └─ NotFoundView.vue
+     └─ vite.config.js
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
