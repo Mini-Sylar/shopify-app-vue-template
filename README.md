@@ -1,5 +1,8 @@
 # Shopify App Template Using Vue 🟢
 
+[![MadeWithVueJs.com shield](https://madewithvuejs.com/storage/repo-shields/4969-shield.svg)](https://madewithvuejs.com/p/shopify-vue-app-template/shield-link)
+
+
 ![Screenshot](https://drive.google.com/uc?id=1VKbiGd09QJ9c_TjpffQ5zasqxVLzqfgc)
 
 A template for building Shopify apps using Vue.js as the frontend. It is based on the [Shopify App Node](https://github.com/Shopify/shopify-app-template-node) template.
