@@ -13,15 +13,16 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "@shopify/shopify-app-express": "^4.1.6",
-    "@shopify/shopify-app-session-storage-sqlite": "^3.0.5",
+    "@shopify/shopify-app-express": "^5.0.1",
+    "@shopify/shopify-app-session-storage-sqlite": "^4.0.1",
     "compression": "^1.7.4",
     "cross-env": "^7.0.3",
+    "express-rate-limit": "^7.3.1",
     "serve-static": "^1.15.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0",
-    "prettier": "^3.2.5",
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.2",
     "pretty-quick": "^4.0.0"
   }
 }
