@@ -25,7 +25,7 @@ Prefer to use GraphQL API for interacting with Shopify. See [Migrating From REST
 
 ## Getting Started
 
-1. Clone this repository
+1. Clone this repository or `npx degit Mini-Sylar/shopify-app-vue-template your-app-name`
 2. Run `npm install` in the root directory
 3. Run `npm run dev -- --reset` to start the configure your app (Initial setup only!)
 4. Run `npm run dev` to start the app (Subsequent runs)
