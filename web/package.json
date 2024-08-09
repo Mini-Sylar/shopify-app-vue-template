@@ -1,6 +1,6 @@
 {
   "name": "shopify-app-node-backend",
-  "version": "1.2.1",
+  "version": "1.2.3",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -13,16 +13,16 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "@shopify/shopify-app-express": "^5.0.2",
-    "@shopify/shopify-app-session-storage-sqlite": "^4.0.2",
+    "@shopify/shopify-app-express": "^5.0.3",
+    "@shopify/shopify-app-session-storage-sqlite": "^4.0.3",
     "compression": "^1.7.4",
     "cross-env": "^7.0.3",
-    "express-rate-limit": "^7.3.1",
+    "express-rate-limit": "^7.4.0",
     "serve-static": "^1.15.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.4",
-    "prettier": "^3.3.2",
+    "prettier": "^3.3.3",
     "pretty-quick": "^4.0.0"
   }
 }
