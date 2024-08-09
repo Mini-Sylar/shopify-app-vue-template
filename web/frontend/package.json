@@ -1,6 +1,6 @@
 {
   "name": "vue-frontend",
-  "version": "1.2.1",
+  "version": "1.2.3",
   "private": true,
   "type": "module",
   "scripts": {
@@ -12,18 +12,18 @@
   },
   "dependencies": {
     "@shopify/app-bridge": "^3.7.10",
-    "pinia": "^2.1.7",
-    "vue": "^3.4.31",
+    "pinia": "^2.2.1",
+    "vue": "^3.4.37",
     "vue-i18n": "^9.13.1",
-    "vue-router": "^4.4.0"
+    "vue-router": "^4.4.3"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.10.3",
-    "@vitejs/plugin-vue": "^5.0.5",
+    "@rushstack/eslint-patch": "^1.10.4",
+    "@vitejs/plugin-vue": "^5.1.2",
     "@vue/eslint-config-prettier": "^9.0.0",
     "eslint": "^8.49.0",
-    "eslint-plugin-vue": "^9.26.0",
-    "prettier": "^3.3.2",
-    "vite": "^5.3.3"
+    "eslint-plugin-vue": "^9.27.0",
+    "prettier": "^3.3.3",
+    "vite": "^5.4.0"
   }
 }
