@@ -104,5 +104,5 @@ Built an app using this template? Submit it here [App submission url](https://fo
 
 > [!NOTE]
 > Since `@shopify/cli: ^3.59` the `@shopify/app` is bundled with the CLI. You can use the CLI to create a new app with the template. You can safely remove the `@shopify/app` package from the `package.json` file.
-> this is reflected in `shopify-app-vue-template > v1.2.4`
+> this is reflected in `shopify-app-vue-template > v1.2.3`
 > you should no longer see npm warnings
