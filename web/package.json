@@ -1,6 +1,6 @@
 {
   "name": "shopify-app-node-backend",
-  "version": "1.2.3",
+  "version": "1.2.5",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
