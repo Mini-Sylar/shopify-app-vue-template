@@ -1,6 +1,6 @@
 {
   "name": "shopify-app-node-backend",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -21,7 +21,7 @@
     "serve-static": "^1.16.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.5",
+    "nodemon": "^3.1.7",
     "prettier": "^3.3.3",
     "pretty-quick": "^4.0.0"
   }
