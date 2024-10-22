@@ -37,7 +37,7 @@ Prefer to use GraphQL API for interacting with Shopify. See [Migrating From REST
 
 ### Vue 💚
 
-- [Vue.js 3.4](https://vuejs.org/)
+- [Vue.js 3.5](https://vuejs.org/)
 - [Vue Router 4](https://router.vuejs.org/) for single page app routing
 - [Vue i18n](https://vue-i18n.intlify.dev/) for app localization
 - [Pinia](https://pinia.esm.dev/) for state management
