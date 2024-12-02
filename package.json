@@ -1,6 +1,6 @@
 {
   "name": "my-node-shopify-app",
-  "version": "1.2.10",
+  "version": "1.2.11",
   "main": "web/index.js",
   "license": "MIT",
   "scripts": {
@@ -12,6 +12,6 @@
     "deploy": "shopify app deploy"
   },
   "dependencies": {
-    "@shopify/cli": "^3.69.3"
+    "@shopify/cli": "^3.70.0"
   }
 }
