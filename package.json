@@ -1,6 +1,6 @@
 {
-  "name": "my-node-shopify-app",
-  "version": "1.2.11",
+  "name": "shopify-app-vue-template",
+  "version": "1.2.12",
   "main": "web/index.js",
   "license": "MIT",
   "scripts": {
@@ -11,7 +11,7 @@
     "generate": "shopify app generate",
     "deploy": "shopify app deploy"
   },
-  "devDependencies": {
-    "@shopify/cli": "^3.70.0"
+  "optionalDependencies": {
+    "@shopify/cli": "^3.72.1"
   }
 }
