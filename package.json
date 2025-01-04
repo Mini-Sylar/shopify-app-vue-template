@@ -1,17 +1,18 @@
 {
   "name": "shopify-app-vue-template",
-  "version": "1.2.12",
+  "version": "1.2.13",
   "main": "web/index.js",
   "license": "MIT",
   "scripts": {
     "shopify": "shopify",
     "build": "shopify app build",
     "dev": "shopify app dev",
+    "dev:reset": "shopify app dev --reset",
     "info": "shopify app info",
     "generate": "shopify app generate",
     "deploy": "shopify app deploy"
   },
   "optionalDependencies": {
-    "@shopify/cli": "^3.72.1"
+    "@shopify/cli": "^3.72.2"
   }
 }
