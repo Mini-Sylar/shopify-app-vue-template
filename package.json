@@ -24,8 +24,10 @@
     "lint:client": "eslint web/client/src/**/*.{js,vue,ts} --fix --ignore-pattern .gitignore",
     "format:server": "prettier --write web/server/src/",
     "format:client": "prettier --write web/client/src/",
-    "client:install": "npm install --prefix web/client",
-    "server:install": "npm install --prefix web/server"
+    "client:install": "npm install --workspace web/client",
+    "client:uninstall": "npm uninstall --workspace web/client",
+    "server:install": "npm install --workspace web/server",
+    "server:uninstall": "npm uninstall --workspace web/server"
   },
   "optionalDependencies": {
     "@shopify/cli": "^3.73.1"
