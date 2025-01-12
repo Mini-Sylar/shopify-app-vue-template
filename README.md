@@ -1,4 +1,4 @@
-# Shopify App Template Using Vue 🟢
+# Shopify App Template Using Vue v.2 🟢
 
 [![MadeWithVueJs.com shield](https://madewithvuejs.com/storage/repo-shields/4969-shield.svg)](https://madewithvuejs.com/p/shopify-vue-app-template/shield-link)
 
@@ -11,38 +11,28 @@ A template for building Shopify apps using Vue.js as the frontend. It is based o
 - [Getting Started](#getting-started)
 - [What is included?](#what-is-included)
 - [Internationlization](#internationlization)
-- [Update Guide](#update-guide-v10x-to-v11x)
 - [What next?](#what-next)
 - [Screenshots](#screenshots)
 - [App Submission](#app-submission)
 - [License](#license)
 
-## Updating Older Versions
-
-> [!NOTE]
-> Since `@shopify/cli: ^3.59` the `@shopify/app` is bundled with the CLI. You can safely remove the `@shopify/app` dependency from the root `package.json` file.
-> this is reflected in `shopify-app-vue-template > v1.2.3`
-> you should no longer see npm warnings
-
-Prefer to use GraphQL API for interacting with Shopify. See [Migrating From REST to GraphQL](https://shopify.dev/docs/api/admin/migrate)
 
 ## Getting Started
 
 1. Clone this repository or `npx degit Mini-Sylar/shopify-app-vue-template your-app-name`
 2. Run `npm install` in the root directory
-3. Run `npm run dev -- --reset` to start the configure your app (Initial setup only!)
+3. Run `npm run dev:reset` to start the configure your app (Initial setup only!)
 4. Run `npm run dev` to start the app (Subsequent runs)
+5. See `package.json` for other scripts
 
 ## What is included?
 
-### Vue 💚
+### Vue Starter💚
 
 - [Vue.js 3.5](https://vuejs.org/)
 - [Vue Router 4](https://router.vuejs.org/) for single page app routing
 - [Vue i18n](https://vue-i18n.intlify.dev/) for app localization
 - [Pinia](https://pinia.esm.dev/) for state management
-- [EsLint](https://eslint.org/) for static code analysis
-- [Prettier](https://prettier.io/) for code formatting
 
 <br>
 

@@ -34,8 +34,3 @@ We look forward to working with all security researchers and strive to be respec
 - Be as transparent as possible, answering all inquires about our report decisions and adding hackers to duplicate HackerOne reports
 - Award bounties within a week of resolution (excluding extenuating circumstances)
 - Only close reports as N/A when the issue reported is included in Known Issues, Ineligible Vulnerabilities Types or lacks evidence of a vulnerability
-
-
-## Receiving Security Updates
-
-To receive all general updates to vulnerabilities, please subscribe to shopify's hackerone [Hacktivity](https://hackerone.com/shopify/hacktivity)

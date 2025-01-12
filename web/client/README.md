@@ -10,12 +10,10 @@ Frontend for shopify-app-vue-template. Dependencies are automatically installed 
 
 ## Project Structure
 
-```├─ frontend
-    ├─ .eslintrc.cjs
+```
+├─ client
      ├─ .gitignore
-     ├─ .prettierrc.json
      ├─ index.html
-     ├─ jsconfig.json
      ├─ package-lock.json
      ├─ package.json
      ├─ public
@@ -37,7 +35,7 @@ Frontend for shopify-app-vue-template. Dependencies are automatically installed 
      │  │  └─ NavBar
      │  │     ├─ LanguageSwitcher.vue
      │  │     └─ WelcomeNavBar.vue
-     │  ├─ helpers
+     │  ├─ services
      │  │  └─ useAuthenticatedFetch.js
      │  ├─ i18n.js
      │  ├─ locales
