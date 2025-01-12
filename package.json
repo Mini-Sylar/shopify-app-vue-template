@@ -1,0 +1,41 @@
+{
+  "name": "shopify-app-vue-template",
+  "version": "2.0.0",
+  "main": "web/server/src/index.js",
+  "license": "MIT",
+  "packageManager": "npm",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "web/client",
+    "web/server"
+  ],
+  "scripts": {
+    "shopify": "shopify",
+    "build": "shopify app build",
+    "dev": "shopify app dev",
+    "dev:reset": "shopify app dev --reset",
+    "dev:webhook": "shopify app webhook trigger",
+    "info": "shopify app info",
+    "generate": "shopify app generate",
+    "deploy": "shopify app deploy",
+    "show:env": "shopify app env show",
+    "lint": "eslint web/**/src/**/*.{js,vue,ts} --fix --ignore-pattern .gitignore",
+    "lint:server": "eslint web/server/src/**/*.{js,ts} --fix --ignore-pattern .gitignore",
+    "lint:client": "eslint web/client/src/**/*.{js,vue,ts} --fix --ignore-pattern .gitignore",
+    "format:server": "prettier --write web/server/src/",
+    "format:client": "prettier --write web/client/src/",
+    "client:install": "npm install --prefix web/client",
+    "server:install": "npm install --prefix web/server"
+  },
+  "optionalDependencies": {
+    "@shopify/cli": "^3.72.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "eslint": "^9.17.0",
+    "eslint-plugin-vue": "^9.32.0",
+    "prettier": "^3.4.2"
+  }
+}

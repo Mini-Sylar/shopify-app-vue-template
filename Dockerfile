@@ -1,0 +1,25 @@
+FROM node:18-alpine
+
+ARG SHOPIFY_API_KEY
+ARG SHOPIFY_API_SECRET
+ARG SCOPES
+ARG HOST
+
+ENV SHOPIFY_API_KEY=$SHOPIFY_API_KEY
+ENV SHOPIFY_API_SECRET=$SHOPIFY_API_SECRET
+ENV SCOPES=$SCOPES
+ENV HOST=$HOST
+
+EXPOSE 8081
+WORKDIR /app
+
+COPY web/server .
+RUN npm install
+
+COPY web/client ./client
+WORKDIR /app/client
+RUN npm install && npm run build
+
+WORKDIR /app
+ENV NODE_ENV=production
+CMD ["npm", "run", "serve"]

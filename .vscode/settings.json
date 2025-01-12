@@ -1,0 +1,7 @@
+{
+  "i18n-ally.localesPaths": ["/web/client/src/locales", "web/client/src/locales"],
+  "i18n-ally.keystyle": "flat",
+  "i18n-ally.enabledFrameworks": ["vue"],
+  "eslint.useFlatConfig": true,
+  "oxc.enable": true
+}
