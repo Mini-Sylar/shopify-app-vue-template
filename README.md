@@ -61,7 +61,7 @@ A template for building Shopify apps using Vue.js as the frontend. It is based o
 #### Updated Structure:
 ```
 root/
-├── client/                 # Frontend Vue app
+├── client/                 # Frontend Vue app, See client README.md
 ├── server/                 # Backend Node.js app
 │   ├── database/           # DB configuration (default: SQLite)
 │   ├── middleware/         # Middleware for user capture
