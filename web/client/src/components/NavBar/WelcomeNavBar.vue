@@ -19,7 +19,9 @@
           >
         </li>
       </ul>
-      <LanguageSwitcher />
+      <div style="display: flex; align-items: center; gap: 1rem">
+        <LanguageSwitcher />
+      </div>
     </nav>
   </header>
 </template>
@@ -32,10 +34,13 @@ import LanguageSwitcher from './LanguageSwitcher.vue'
 <style scoped>
 nav {
   background-color: #f2f2f2;
-  padding-block: 1rem;
+  padding-block: 0.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  padding-inline: 2rem;
+  margin-bottom: 2rem;
 }
 
 ul {
@@ -44,6 +49,7 @@ ul {
   align-items: center;
   list-style: none;
   gap: 1rem;
+  padding: 0;
 }
 
 .router-link-exact-active {
