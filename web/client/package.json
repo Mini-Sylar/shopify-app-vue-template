@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@shopify/app-bridge": "^3.7.10",
-    "pinia": "^2.3.0",
+    "pinia": "^2.3.1",
     "vue": "^3.5.13",
     "vue-i18n": "^11.0.1",
     "vue-router": "^4.5.0"
@@ -20,6 +20,6 @@
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.10.5",
     "@vitejs/plugin-vue": "^5.2.1",
-    "vite": "^6.0.7"
+    "vite": "^6.0.11"
   }
 }
