@@ -27,3 +27,5 @@ extensions/*/build
 # Node library SQLite database
 web/database.sqlite
 shopify.app.example.toml
+shopify.app.toml
+web/server/src/database/database.sqlite
