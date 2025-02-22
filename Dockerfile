@@ -1,4 +1,4 @@
-FROM node:22-alpine  # you can update to node 22
+FROM node:22-alpine
 
 ARG SHOPIFY_API_KEY
 ARG SHOPIFY_API_SECRET
