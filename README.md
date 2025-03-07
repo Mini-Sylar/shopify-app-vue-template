@@ -254,3 +254,17 @@ app.get("/api/external-api", async (_req, res) => {
 
 Built an app using this template? Submit it here: [App submission form](https://forms.gle/K8VGCqvcvfBRSug58).
 
+
+---
+
+## Supporting This Project
+
+If you find this template useful, you can support its development through:
+
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/Mini-Sylar?style=for-the-badge&logo=githubsponsors&logoColor=white&color=EA4AAA)](https://github.com/sponsors/Mini-Sylar)
+
+You can also:
+- Star ⭐ this repository
+- Report bugs or suggest features
+- Submit pull requests to improve the template
+- Share it with others who might find it useful
