@@ -1,4 +1,4 @@
-# Shopify App Template Using Vue v.2 🟢
+# Shopify App Template Using Vue 🟢
 
 [![MadeWithVueJs.com shield](https://madewithvuejs.com/storage/repo-shields/4969-shield.svg)](https://madewithvuejs.com/p/shopify-vue-app-template/shield-link)
 
