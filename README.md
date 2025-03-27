@@ -8,18 +8,23 @@ A template for building Shopify apps using Vue.js as the frontend. It is based o
 
 ---
 
-## Table of Contents
+## Documentation
 
-1. [Getting Started](#getting-started)
-2. [What is Included?](#what-is-included)
-3. [Internationalization](#internationalization)
-4. [New Features in v.2.0](#new-features-in-v20)
-5. [FAQ](#faq)
-6. [Screenshots](#screenshots)
-7. [App Submission](#app-submission)
-8. [License](#license)
+For detailed documentation and guides on how to use this template, visit:
+[![Documentation](https://img.shields.io/badge/documentation-view%20docs-blue?style=for-the-badge&logo=github)](https://shopifyvue.uagency.org/)
 
----
+## Supporting This Project
+
+If you find this template useful, you can support its development through:
+
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/Mini-Sylar?style=for-the-badge&logo=githubsponsors&logoColor=white&color=EA4AAA)](https://github.com/sponsors/Mini-Sylar)
+
+You can also:
+- Star ⭐ this repository
+- Report bugs or suggest features
+- Submit pull requests to improve the template
+- Share it with others who might find it useful
+
 
 ## Getting Started
 
@@ -29,32 +34,6 @@ A template for building Shopify apps using Vue.js as the frontend. It is based o
 4. Run `npm run dev` to start the app (Subsequent runs)
 5. See `package.json` for other scripts
 
----
-
-## What is Included?
-
-### Vue Starter 💚
-
-- [Vue.js 3.5](https://vuejs.org/)
-- [Vue Router 4](https://router.vuejs.org/) for single-page app routing
-- [Vue i18n](https://vue-i18n.intlify.dev/) for app localization
-- [Pinia](https://pinia.esm.dev/) for state management
-
----
-
-## Internationalization 🌍
-
-### Adding a New Translation
-
-- Use `Vue i18n` for app localization. To add a new language, create a new JSON file in the [`Locales Folder`](./web/frontend/src/locales/) and add the translations. See [i18n.js](./web/frontend/src/i18n.js) for setup.
-- All translation files are lazily loaded, meaning only the translations for the current language are loaded.
-- The default language is what Shopify returns via the `locale` query parameter. If not set, it falls back to `en`.
-- Vue Router embeds the language in the URL, e.g., `localhost:3000/en` or `localhost:3000/zh/about`.
-- The template has been localized. See the [`Locales Folder`](./web/frontend/src/locales/) folder. Translations may not be 100% accurate, so pull requests are welcome.
-
----
-
-## New Features in v.2.0
 
 ### Folder Structure
 
@@ -102,39 +81,6 @@ root/
 | `npm run server:install`| Install server dependencies                                           |
 | `npm run server:uninstall`| Uninstall server dependencies                                       |
 
----
-
-### Backend Updates
-
-- **GraphQL:** Removed REST resources in favor of GraphQL, as REST will soon be deprecated.
-- **New Models:**
-  - **User Model:** Created when a user installs the app.
-  - **Webhook Model:** Tracks fired webhooks to prevent duplication.
-- **Webhook Processing:**
-  - Verification and processing utilities added (new in v.2).
-- **Bug Fix:** Fixed an issue with the product creator service.
-
----
-
-### Frontend Updates
-
-- Renamed `helpers` folder to `services`.
-- Updated `useAuthenticatedFetch`:
-  - Now accepts custom headers in a config object.
-  - Includes `enableI18nInHeaders` to pass the user's locale (true by default).
-  - Locale can be read using the `getLocalePreferencesFromRequest` function in `utils.js` (server).
-
----
-
-### Deployment Enhancements
-
-- Updated **Dockerfile** for simpler deployment.
-  - Tested on Render.com.
-- Added example `shopify.app.example.toml` configuration file.
-  - Allows multiple configurations (e.g., `shopify.app.staging.toml`).
-  - Production configurations should not be committed to avoid exposing sensitive information.
-
----
 
 ## FAQ
 
@@ -257,14 +203,3 @@ Built an app using this template? Submit it here: [App submission form](https://
 
 ---
 
-## Supporting This Project
-
-If you find this template useful, you can support its development through:
-
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/Mini-Sylar?style=for-the-badge&logo=githubsponsors&logoColor=white&color=EA4AAA)](https://github.com/sponsors/Mini-Sylar)
-
-You can also:
-- Star ⭐ this repository
-- Report bugs or suggest features
-- Submit pull requests to improve the template
-- Share it with others who might find it useful
