@@ -20,6 +20,6 @@
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.11.0",
     "@vitejs/plugin-vue": "^5.2.3",
-    "vite": "^6.2.3"
+    "vite": "^6.2.4"
   }
 }
