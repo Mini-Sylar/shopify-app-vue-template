@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { defineConfig } from 'vite'
 import { dirname } from 'path'
 import { fileURLToPath } from 'url'
@@ -42,7 +41,17 @@ if (host === 'localhost') {
 
 export default defineConfig({
   root: dirname(fileURLToPath(import.meta.url)),
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    {
+      name: 'vite-plugin-replace-shopify-api-key',
+      transformIndexHtml: {
+        handler(html) {
+          return html.replace(/SHOPIFY_API_KEY/g, process.env.SHOPIFY_API_KEY)
+        }
+      }
+    }
+  ],
   define: {
     'process.env.SHOPIFY_API_KEY': JSON.stringify(process.env.SHOPIFY_API_KEY)
   },

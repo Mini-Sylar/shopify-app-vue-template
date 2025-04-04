@@ -14,11 +14,11 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "@shopify/shopify-app-express": "^5.0.16",
-    "@shopify/shopify-app-session-storage-sqlite": "^4.0.16",
+    "@shopify/shopify-app-express": "^5.0.17",
+    "@shopify/shopify-app-session-storage-sqlite": "^4.0.17",
     "compression": "^1.8.0",
     "cross-env": "^7.0.3",
-    "serve-static": "^1.16.2",
+    "serve-static": "^2.2.0",
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {

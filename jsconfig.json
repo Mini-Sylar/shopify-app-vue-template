@@ -1,8 +1,16 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@/*": ["./web/client/src/*"]
+    },
+    "types": ["@shopify/app-bridge-types"],
+    "moduleResolution": "bundler",
+    "module": "ESNext",
+    "target": "ESNext",
+    "checkJs": true,
+    "resolveJsonModule": true,
+    "allowJs": true
   },
+  "include": ["web/client/src/**/*", "web/client/env.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

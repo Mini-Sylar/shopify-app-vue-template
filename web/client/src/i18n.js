@@ -2,17 +2,24 @@ import { nextTick } from 'vue'
 import { createI18n } from 'vue-i18n'
 import en from './locales/en.json'
 import zh from './locales/zh.json'
+import { appBridge } from './plugins/appBridge'
 
 export const SUPPORT_LOCALES = ['en', 'zh']
 
-export function setupI18n(options = { locale: localStorage.getItem('app_locale') || 'en' }) {
+export function setupI18n(
+  options = { locale: localStorage.getItem('app_locale') || appBridge.config.locale || 'en' }
+) {
   const i18n = createI18n(options)
   setI18nLanguage(i18n, options.locale)
   return i18n
 }
 
+/**
+ * @param {import("vue-i18n").I18n<any, any, any, string, true> | import("vue-i18n").I18n<any, any, any, string, false>} i18n
+ * @param {string} locale
+ */
 export function setI18nLanguage(i18n, locale) {
-  i18n.global.locale.value = locale
+  i18n.global.locale = locale
   localStorage.setItem('app_locale', locale)
   /**
    * NOTE:
@@ -21,6 +28,10 @@ export function setI18nLanguage(i18n, locale) {
   document.querySelector('html').setAttribute('lang', locale)
 }
 
+/**
+ * @param {import("vue-i18n").I18n<any, any, any, string, true> | import("vue-i18n").I18n<any, any, any, string, false>} i18n
+ * @param {string} locale
+ */
 export async function loadLocaleMessages(i18n, locale) {
   // load locale messages with dynamic import
   const messages = await import(`./locales/${locale}.json`)
@@ -32,14 +43,11 @@ export async function loadLocaleMessages(i18n, locale) {
 }
 
 export const i18n = setupI18n({
-  locale:
-    localStorage.getItem('app_locale') ||
-    new URLSearchParams(window.location.search).get('locale') ||
-    'en',
+  locale: localStorage.getItem('app_locale') || appBridge.config.locale || 'en',
   messages: {
     en,
     zh
   },
-  fallbackLocale: localStorage.getItem('app_locale') || 'en',
+  fallbackLocale: localStorage.getItem('app_locale') || appBridge.config.locale || 'en',
   legacy: false
 })

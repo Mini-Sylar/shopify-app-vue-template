@@ -24,8 +24,9 @@ const router = createRouter({
     {
       path: '/exitiframe',
       name: 'exitiframe',
-      component: () => import('../views/ExitIframeView.vue'),
-      redirect: { name: 'home' }
+      redirect: {
+        name: 'home'
+      }
     },
     {
       path: '/pathMatch(.*)',
@@ -36,8 +37,11 @@ const router = createRouter({
 
 // i18n navigation guard
 router.beforeEach(async (to, _from, next) => {
-  const paramsLocale = to.params.locale
-  const locale = i18n.global.locale.value || i18n.global.fallbackLocale
+  /**
+   * @type {string} locale
+   */
+  const paramsLocale = Array.isArray(to.params.locale) ? to.params.locale[0] : to.params.locale
+  const locale = i18n.global.locale || i18n.global.fallbackLocale
   // use locale if paramsLocale is not in SUPPORT_LOCALES
   if (!SUPPORT_LOCALES.includes(paramsLocale)) {
     return next(`/${locale}`)

@@ -1,6 +1,5 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import { useAuthenticatedFetch } from '../services/useAuthenticatedFetch'
 
 /**
  * @typedef {Object} ProductsCountData
@@ -20,32 +19,59 @@ import { useAuthenticatedFetch } from '../services/useAuthenticatedFetch'
 
 export const useProductCounterStore = defineStore('productCounter', () => {
   const count = ref(0)
-  const useFetch = useAuthenticatedFetch()
+  let controller = null
 
   const getProducts = async () => {
-    const response = await useFetch('/api/products/count')
-    if (!response.ok) {
-      throw new Error(`Failed to fetch product count: ${response.status}`)
+    // Abort previous request if exists
+    if (controller) {
+      controller.abort()
     }
-    /** @type {ProductsCountResponse} */
-    const data = await response.json() // { productsCount: { count: number } }
-    count.value = data.productsCount.count
-    return data
+    controller = new AbortController()
+
+    try {
+      console.log('Fetching product count...')
+      const response = await fetch('/api/products/count', {
+        signal: controller.signal
+      })
+      if (!response.ok) {
+        throw new Error(`Failed to fetch product count: ${response.status}`)
+      }
+      /** @type {ProductsCountResponse} */
+      const data = await response.json()
+      console.log('Product count fetched:', data)
+      count.value = data.productsCount.count
+      return data
+    } finally {
+      controller = null
+    }
   }
 
   const createProducts = async () => {
-    const response = await useFetch('/api/products/create')
-    if (!response.ok) {
-      throw new Error(`Failed to create products: ${response.status}`)
+    // Abort previous request if exists
+    if (controller) {
+      controller.abort()
     }
-    /** @type {CreateProductsResponse} */
-    const data = await response.json()
-    if (!data.success) {
-      throw new Error(`Failed to create products: ${data.error}`)
+    controller = new AbortController()
+
+    try {
+      const response = await fetch('/api/products/create', {
+        signal: controller.signal
+      })
+      if (!response.ok) {
+        throw new Error(`Failed to create products: ${response.status}`)
+      }
+      /** @type {CreateProductsResponse} */
+      const data = await response.json()
+      if (!data.success) {
+        throw new Error(`Failed to create products: ${data.error}`)
+      }
+      await getProducts()
+      return data
+    } finally {
+      controller = null
     }
-    await getProducts()
-    return data
   }
+
   return {
     count,
     getProducts,

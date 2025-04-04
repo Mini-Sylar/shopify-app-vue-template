@@ -12,10 +12,18 @@
         <p>{{ $t('HomePage.subheading') }}</p>
         <h3>{{ $t('HomePage.feature-text') }}</h3>
         <ul>
+          <!-- @vue-ignore -->
           <li v-for="(translation, index) in $tm('HomePage.feature-list-vue')" :key="index">
-            <a :href="translation.url">{{ translation.title.replace('{version}', version) }}</a>
-            -
-            <span>{{ translation.description }}</span>
+            <!-- @vue-ignore -->
+            <a :href="translation.url">
+              <!-- @vue-expect-error translated messages not typed -->
+              {{ translation.title.replace('{version}', version) }}
+            </a>
+            <span>-</span>
+            <span>
+              <!-- @vue-expect-error translated messages not typed -->
+              {{ translation.description }}
+            </span>
           </li>
         </ul>
         <hr />
@@ -60,7 +68,7 @@
       </p>
       <br />
       <h2>{{ $t('Products.total-products') }}</h2>
-      <h3>{{ currentProductCount }}</h3>
+      <h3>{{ count }}</h3>
       <div class="create-sample-product">
         <button @click.prevent="addProducts" :disabled="buttonDisabled">
           {{ $t('Products.button-text') }}
@@ -71,48 +79,33 @@
 </template>
 
 <script setup>
-import { Loading, Toast } from '@shopify/app-bridge/actions'
-import { useProductCounterStore } from '@/stores/products.js'
-import { ref, inject, onMounted, computed, version } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { useProductCounterStore } from '@/stores/products'
+import { storeToRefs } from 'pinia'
+import { appBridge } from '@/plugins/appBridge'
+import { ref, version } from 'vue'
 
-const { t } = useI18n({
-  useScope: 'global'
-})
-const appBridge = inject('useAppBridge')
 const buttonDisabled = ref(false)
-
-const currentProductCount = computed(() => {
-  return useProductCounterStore().count
-})
-
-const useToast = (message, isError = false) => {
-  const toast = Toast.create(appBridge, {
-    message: message,
-    duration: 3000,
-    isError: isError
-  })
-  toast.dispatch(Toast.Action.SHOW)
-}
+const { count } = storeToRefs(useProductCounterStore())
+useProductCounterStore().getProducts()
 
 async function addProducts() {
-  await appBridge.dispatch(Loading.Action.START)
-  buttonDisabled.value = true
-  useToast('Creating products')
   try {
+    console.log(appBridge)
+    appBridge.toast.show('Creating sample products...')
+    buttonDisabled.value = true
     await useProductCounterStore().createProducts()
-    useToast(t('Products.products-success'))
-  } catch (error) {
-    useToast(t('Products.products-error'), true)
+  } catch {
+    appBridge.toast.show('Error creating sample products', {
+      isError: true
+    })
   } finally {
+    appBridge.toast.show('Sample products created successfully', {
+      duration: 5000
+    })
     buttonDisabled.value = false
-    await appBridge.dispatch(Loading.Action.STOP)
+    useProductCounterStore().getProducts()
   }
 }
-
-onMounted(() => {
-  useProductCounterStore().getProducts()
-})
 </script>
 
 <style scoped>
