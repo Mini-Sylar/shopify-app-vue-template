@@ -29,7 +29,6 @@ export const useProductCounterStore = defineStore('productCounter', () => {
     controller = new AbortController()
 
     try {
-      console.log('Fetching product count...')
       const response = await fetch('/api/products/count', {
         signal: controller.signal
       })

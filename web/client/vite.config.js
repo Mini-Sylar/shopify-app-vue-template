@@ -42,15 +42,16 @@ if (host === 'localhost') {
 export default defineConfig({
   root: dirname(fileURLToPath(import.meta.url)),
   plugins: [
-    vue(),
     {
       name: 'vite-plugin-replace-shopify-api-key',
       transformIndexHtml: {
         handler(html) {
-          return html.replace(/SHOPIFY_API_KEY/g, process.env.SHOPIFY_API_KEY)
-        }
+          return html.replace(/%VITE_SHOPIFY_API_KEY%/g, process.env.SHOPIFY_API_KEY)
+        },
+        order: 'pre'
       }
-    }
+    },
+    vue()
   ],
   define: {
     'process.env.SHOPIFY_API_KEY': JSON.stringify(process.env.SHOPIFY_API_KEY)
