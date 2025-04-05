@@ -20,6 +20,7 @@ import { defineStore } from 'pinia'
 export const useProductCounterStore = defineStore('productCounter', () => {
   const count = ref(0)
   let controller = null
+  const productLoading = ref(false)
 
   const getProducts = async () => {
     // Abort previous request if exists
@@ -29,6 +30,7 @@ export const useProductCounterStore = defineStore('productCounter', () => {
     controller = new AbortController()
 
     try {
+      productLoading.value = true
       const response = await fetch('/api/products/count', {
         signal: controller.signal
       })
@@ -42,6 +44,7 @@ export const useProductCounterStore = defineStore('productCounter', () => {
       return data
     } finally {
       controller = null
+      productLoading.value = false
     }
   }
 
@@ -74,6 +77,7 @@ export const useProductCounterStore = defineStore('productCounter', () => {
   return {
     count,
     getProducts,
-    createProducts
+    createProducts,
+    productLoading
   }
 })

@@ -1,56 +1,39 @@
 {
-  "NavBar": {
-    "home": "首页",
-    "about": "关于"
-  },
-  "HomePage": {
-    "heading": "使用 {link} 构建 Shopify 应用做得不错",
-    "heading-link-text": "Vue 模板 💚",
-    "subheading": "您的应用已准备好探索，其中包含您构建出色应用所需的一切！",
-    "feature-text": "特点",
-    "feature-list-vue": [
-      {
-        "title": "Vue {version} 🟢",
-        "description": "作为您的渐进式前端框架",
-        "url": "https://vuejs.org/"
-      },
-      {
-        "title": "Vue Router🔗",
-        "description": "Vue.js 的表达性、可配置和便捷的路由",
-        "url": "https://router.vuejs.org/"
-      },
-      {
-        "title": "Pinia🍍",
-        "description": "Vue.js 的直观客户端状态管理解决方案",
-        "url": "https://pinia.vuejs.org/"
-      },
-      {
-        "title": "vue-i18n-intlify 🌐",
-        "description": "Vue.js 的国际化插件，易于使用、功能强大且面向组件",
-        "url": "https://vue-i18n.intlify.dev/"
-      }
-    ],
-    "shopify-features-vue": [
-      "useAuthenticatedFetch 🔐 - 安全调用您的 API 端点",
-      "AppBridge 集成 🌉 - 通过 AppBridge 与 Shopify Admin 通信"
-    ],
-    "useful-links": "有用的链接",
-    "app-bridge": "有关 AppBridge 的更多信息，请参阅 {link}",
-    "learn-more": "了解有关在 {link} 中构建您的应用的更多信息",
-    "this-shopify-tutorial": "此 Shopify 教程",
-    "starter-available": "此起始模板可在 {link} 上获得"
-  },
-  "Products": {
-    "heading": "产品计数器",
-    "subheading": "示例产品以默认标题和价格创建。您可以随时删除它们",
-    "total-products": "总产品",
-    "button-text": "创建示例产品",
-    "products-success": "成功创建产品",
-    "products-error": "创建产品时出错"
-  },
-  "About": {
-    "heading": "关于",
-    "line-1": "即使 Vue 是一种流行的 JavaScript 框架，但在构建 Shopify 应用时几乎没有关于使用 Vue 作为前端框架的参考。",
-    "line-2": "此起始模板旨在通过提供构建下一个大型 Shopify 应用所需的所有必要工具来解决这个问题。"
-  }
+  "About.heading": "关于",
+  "About.line-1": "在构建Shopify应用程序时，即使Vue是一个流行的JavaScript框架，也几乎没有参考将VUE用作前端框架。",
+  "About.line-2": "该起动器模板旨在通过提供使用VUE JS构建下一个大型Shopify应用的所有必要工具来解决此问题。",
+  "HomePage.app-bridge": "有关AppBridge的更多信息，请参见{link}",
+  "HomePage.app_bridge.description": "通过Appbridge与Shopify Admin通信",
+  "HomePage.app_bridge.title": "App Bridge集成🌉",
+  "HomePage.authenticated_fetch.description": "默认情况下，所有获取调用均经过身份验证！",
+  "HomePage.authenticated_fetch.title": "提取🔐",
+  "HomePage.feature-list-vue[0].description": "作为您的进步前端框架",
+  "HomePage.feature-list-vue[0].title": "vue {版本}🟢",
+  "HomePage.feature-list-vue[0].url": "https://vuejs.org/",
+  "HomePage.feature-list-vue[1].description": "vue.js的表达，可配置和方便的路由",
+  "HomePage.feature-list-vue[1].title": "VUE路由器🔗",
+  "HomePage.feature-list-vue[1].url": "https://router.vuejs.org/",
+  "HomePage.feature-list-vue[2].description": "vue.js的直观客户国家管理解决方案",
+  "HomePage.feature-list-vue[2].title": "leia🍍",
+  "HomePage.feature-list-vue[2].url": "https://pinia.vuejs.s.org/",
+  "HomePage.feature-list-vue[3].description": "vue.js的国际化插件，容易，功能强大且面向vue.js",
+  "HomePage.feature-list-vue[3].title": "vue-i18n-Intlify🌐",
+  "HomePage.feature-list-vue[3].url": "https://vue-i18n.intlify.dev/",
+  "HomePage.feature-text": "特征",
+  "HomePage.heading": "在建立{link}的Shopify应用程序方面做得很好",
+  "HomePage.heading-link-text": "VUE模板💚",
+  "HomePage.learn-more": "了解有关在{link}中构建应用程序的更多信息",
+  "HomePage.loading": "加载中...",
+  "HomePage.starter-available": "此启动模板可在{link}上找到",
+  "HomePage.subheading": "您的应用程序可以探索，其中包含构建Awesome应用所需的一切！",
+  "HomePage.this-shopify-tutorial": "该商店的教程",
+  "HomePage.useful-links": "有用的链接",
+  "NavBar.about": "关于",
+  "NavBar.home": "家",
+  "Products.button-text": "创建样本产品",
+  "Products.heading": "产品计数器",
+  "Products.products-error": "错误创建产品",
+  "Products.products-success": "成功创建了产品",
+  "Products.subheading": "样本产品是用默认标题和价格创建的。\n您可以随时删除它们",
+  "Products.total-products": "总产品"
 }

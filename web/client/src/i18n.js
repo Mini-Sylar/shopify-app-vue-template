@@ -19,12 +19,12 @@ export function setupI18n(
  * @param {string} locale
  */
 export function setI18nLanguage(i18n, locale) {
-  i18n.global.locale = locale
+  if (typeof i18n.global.locale === 'object') {
+    i18n.global.locale.value = locale
+  } else {
+    i18n.global.locale = locale
+  }
   localStorage.setItem('app_locale', locale)
-  /**
-   * NOTE:
-   * The locale is passed to useAuthenticatedFetch.js to set the Accept-Language header, you can configure the headers in the useAuthenticatedFetch.js file.
-   */
   document.querySelector('html').setAttribute('lang', locale)
 }
 

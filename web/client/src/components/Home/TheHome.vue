@@ -4,7 +4,7 @@
       <div class="left-text">
         <i18n-t keypath="HomePage.heading" tag="h2" for="link" scope="global">
           <template #link>
-            <a href="https://shopify-vue-template.vercel.app/" target="_blank">{{
+            <a href="https://shopifyvue.uagency.org/" target="_blank">{{
               $t('HomePage.heading-link-text')
             }}</a>
           </template>
@@ -15,7 +15,7 @@
           <!-- @vue-ignore -->
           <li v-for="(translation, index) in $tm('HomePage.feature-list-vue')" :key="index">
             <!-- @vue-ignore -->
-            <a :href="translation.url">
+            <a :href="translation.url" target="_blank">
               <!-- @vue-expect-error translated messages not typed -->
               {{ translation.title.replace('{version}', version) }}
             </a>
@@ -28,14 +28,24 @@
         </ul>
         <hr />
         <ul>
-          <li v-for="(shopifyFeature, index) in $tm('HomePage.shopify-features-vue')" :key="index">
-            {{ shopifyFeature }}
+          <li>
+            <span>{{ $t('HomePage.authenticated_fetch.title') }}</span> -
+            {{ $t('HomePage.authenticated_fetch.description') }}
+          </li>
+          <li>
+            <a href="https://shopify.dev/docs/api/app-bridge-library/apis" target="_blank"
+              >{{ $t('HomePage.app_bridge.title') }}
+            </a>
+            -
+            {{ $t('HomePage.app_bridge.description') }}
           </li>
         </ul>
         <h3>{{ $t('HomePage.useful-links') }}</h3>
         <i18n-t keypath="HomePage.app-bridge" tag="p" for="link" scope="global">
           <template #link>
-            <a href="https://shopify.dev/docs/api/app-bridge" target="_blank">App Bridge</a>
+            <a href="https://shopify.dev/docs/api/app-bridge-library/apis" target="_blank"
+              >App Bridge</a
+            >
           </template>
         </i18n-t>
         <i18n-t keypath="HomePage.learn-more" tag="p" for="link" scope="global">
@@ -68,7 +78,15 @@
       </p>
       <br />
       <h2>{{ $t('Products.total-products') }}</h2>
-      <h3>{{ count }}</h3>
+
+      <h3>
+        <span v-if="!productLoading">
+          {{ count }}
+        </span>
+        <span v-else>
+          {{ $t('HomePage.loading') }}
+        </span>
+      </h3>
       <div class="create-sample-product">
         <button @click.prevent="addProducts" :disabled="buttonDisabled">
           {{ $t('Products.button-text') }}
@@ -85,7 +103,7 @@ import { appBridge } from '@/plugins/appBridge'
 import { ref, version } from 'vue'
 
 const buttonDisabled = ref(false)
-const { count } = storeToRefs(useProductCounterStore())
+const { count, productLoading } = storeToRefs(useProductCounterStore())
 useProductCounterStore().getProducts()
 
 async function addProducts() {

@@ -41,7 +41,8 @@ router.beforeEach(async (to, _from, next) => {
    * @type {string} locale
    */
   const paramsLocale = Array.isArray(to.params.locale) ? to.params.locale[0] : to.params.locale
-  const locale = i18n.global.locale || i18n.global.fallbackLocale
+  const locale =
+    localStorage.getItem('app_locale') || i18n.global.locale || i18n.global.fallbackLocale
   // use locale if paramsLocale is not in SUPPORT_LOCALES
   if (!SUPPORT_LOCALES.includes(paramsLocale)) {
     return next(`/${locale}`)
