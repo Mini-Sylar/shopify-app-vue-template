@@ -9,8 +9,8 @@
     "target": "ESNext",
     "checkJs": true,
     "resolveJsonModule": true,
-    "allowJs": true
+    "allowJs": true,
   },
-  "include": ["web/client/src/**/*", "web/client/env.d.ts"],
+  "include": ["web/client/src/**/*", "web/client/env.d.ts", "web/client/src/**/*.vue"],
   "exclude": ["node_modules", "dist"]
 }
