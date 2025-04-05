@@ -108,7 +108,6 @@ useProductCounterStore().getProducts()
 
 async function addProducts() {
   try {
-    console.log(appBridge)
     appBridge.toast.show('Creating sample products...')
     buttonDisabled.value = true
     await useProductCounterStore().createProducts()
