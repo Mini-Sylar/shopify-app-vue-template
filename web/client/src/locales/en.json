@@ -8,6 +8,7 @@
     "heading-link-text": "Vue Template 💚",
     "subheading": "Your app is ready to explore, it contains everything you would need to build your awesome app!",
     "feature-text": "Features",
+    "loading": "Loading...",
     "feature-list-vue": [
       {
         "title": "Vue {version} 🟢",
@@ -30,10 +31,14 @@
         "url": "https://vue-i18n.intlify.dev/"
       }
     ],
-    "shopify-features-vue": [
-      "useAuthenticatedFetch 🔐 - Securely call your API endpoints",
-      "AppBridge Integration 🌉 - Communicate with Shopify Admin through AppBridge"
-    ],
+    "authenticated_fetch": {
+      "title": "Fetch 🔐",
+      "description": "All fetch calls are authenticated by default!"
+    },
+    "app_bridge": {
+      "title": "App Bridge Integration 🌉",
+      "description": "Communicate with Shopify Admin through AppBridge"
+    },
     "useful-links": "Useful Links",
     "app-bridge": "See {link} for more information on AppBridge",
     "learn-more": "Learn more about building out your app in {link}",

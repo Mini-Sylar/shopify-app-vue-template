@@ -7,8 +7,8 @@
             :to="{
               name: 'home'
             }"
-            >{{ $t('NavBar.home') }}</RouterLink
-          >
+            >{{ $t('NavBar.home') }}
+          </RouterLink>
         </li>
         <li>
           <RouterLink

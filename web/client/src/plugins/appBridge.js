@@ -1,23 +1,6 @@
-// @ts-nocheck
+// # https://shopify.dev/docs/api/app-bridge-library/apis - App Bridge API
 
-import { createApp } from '@shopify/app-bridge'
-export const initAppBridge = () => {
-  const host = new URLSearchParams(location.search).get('host') || window.__SHOPIFY_DEV_HOST
-  window.__SHOPIFY_DEV_HOST = host
-  return createApp({
-    apiKey: process.env.SHOPIFY_API_KEY || '',
-    host: host,
-    forceRedirect: true
-  })
-}
+// You can also interact directly with admin API using app bridge
+// # https://shopify.dev/docs/api/app-bridge-library#direct-api-access - Direct API access
 
-export const ShopifyAppBridge = {
-  /**
-   * @param {import('vue').App} app
-   */
-  install: (app) => {
-    const useAppBridge = initAppBridge()
-    app.config.globalProperties.$useAppBridge = useAppBridge
-    app.provide('useAppBridge', useAppBridge)
-  }
-}
+export const appBridge = window.shopify
