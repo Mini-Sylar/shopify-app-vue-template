@@ -1,6 +1,6 @@
 {
   "name": "shopify-app-vue-template",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "main": "web/server/src/index.js",
   "license": "MIT",
   "type": "module",
