@@ -3,6 +3,7 @@ import { join } from 'path'
 import { readFileSync } from 'fs'
 import express from 'express'
 import serveStatic from 'serve-static'
+import RateLimit from 'express-rate-limit'
 import shopify from './shopify.js'
 import WebhookHandlers from './webhooks/webhooks.js'
 import productsRoutes from './routes/products.js'
@@ -17,6 +18,16 @@ const STATIC_PATH =
     : `${process.cwd()}/../client/`
 
 const app = express()
+
+// set up rate limiter: maximum of 100 requests per 15 minutes
+const limiter = RateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // max 100 requests per windowMs
+})
+
+// apply rate limiter to all requests
+app.use(limiter)
+
 app.use(express.raw({ type: 'application/json' }))
 
 // Set up Shopify authentication and webhook handling
