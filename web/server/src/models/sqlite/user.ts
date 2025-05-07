@@ -1,5 +1,5 @@
 import { Database } from 'sqlite3'
-import { User as UserType } from '../../types/models.js'
+import { User as UserType } from '../../types/models.type.js'
 
 interface UserCreate {
   shop: string

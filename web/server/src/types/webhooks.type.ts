@@ -21,7 +21,7 @@ export interface CustomerDataRequestPayload extends BaseWebhookPayload {
 /**
  * Payload for shop redaction webhook
  */
-export interface ShopRedactionPayload extends BaseWebhookPayload {}
+export type ShopRedactionPayload = BaseWebhookPayload
 
 /**
  * Payload for customer redaction webhook
@@ -37,7 +37,7 @@ export interface CustomerRedactionPayload extends BaseWebhookPayload {
 /**
  * Payload for app uninstalled webhook
  */
-export interface AppUninstalledPayload extends BaseWebhookPayload {}
+export type AppUninstalledPayload = BaseWebhookPayload
 
 /**
  * Product related webhook payloads

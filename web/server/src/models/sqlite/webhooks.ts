@@ -1,5 +1,5 @@
 import { Database } from 'sqlite3'
-import { Webhook as WebhookType } from '../../types/models.js'
+import { Webhook as WebhookType } from '../../types/models.type.js'
 
 interface WebhookCreate {
   user_id: number | null

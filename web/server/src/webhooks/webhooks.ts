@@ -9,7 +9,7 @@ import {
   ProductWebhookPayload,
   isProductPayload,
   isCustomerDataRequestPayload
-} from '../types/webhooks.js'
+} from '../types/webhooks.type.js'
 
 /**
  * Webhook handler implementations for Shopify webhook events.
