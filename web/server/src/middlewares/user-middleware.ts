@@ -4,7 +4,7 @@ import { User } from '../models/sqlite/user.js'
 // create a user after installing the app
 export async function registerUser(
   req: Request,
-  res: Response,
+  _res: Response,
   next: NextFunction
 ): Promise<void> {
   try {

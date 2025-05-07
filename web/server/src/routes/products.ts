@@ -5,7 +5,7 @@ import { GraphqlQueryError } from '@shopify/shopify-api'
 
 const router = express.Router()
 
-router.get('/count', async (req, res) => {
+router.get('/count', async (_req, res) => {
   const session = res.locals.shopify.session
   const client = new shopify.api.clients.Graphql({ session })
   try {
@@ -21,7 +21,7 @@ router.get('/count', async (req, res) => {
   }
 })
 
-router.get('/create', async (req, res) => {
+router.get('/create', async (_req, res) => {
   let status = 200
   let error = null
 
