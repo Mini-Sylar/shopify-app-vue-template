@@ -8,10 +8,12 @@ if (
   !process.env.CI &&
   !process.env.SHOPIFY_API_KEY
 ) {
-  console.warn(
+  throw new Error(
     '\nBuilding the frontend app without an API key. The frontend build will not run without an API key. Set the SHOPIFY_API_KEY environment variable when running the build command.\n'
   )
 }
+
+process.env.VITE_SHOPIFY_API_KEY = process.env.SHOPIFY_API_KEY
 
 const proxyOptions = {
   target: `http://127.0.0.1:${process.env.BACKEND_PORT}`,
