@@ -9,17 +9,25 @@ ENV SHOPIFY_API_KEY=$SHOPIFY_API_KEY
 ENV SHOPIFY_API_SECRET=$SHOPIFY_API_SECRET
 ENV SCOPES=$SCOPES
 ENV HOST=$HOST
+ENV NODE_ENV=production
 
 EXPOSE 8081
 WORKDIR /app
 
-COPY web/server .
-RUN npm install
+# Build server
+COPY web/server/package*.json ./
+RUN npm ci
 
-COPY web/client ./client
+COPY web/server ./
+RUN npm run typecheck && npm run build
+
+# Build client
+COPY web/client/package*.json ./client/
 WORKDIR /app/client
-RUN npm install && npm run build
+RUN npm ci
+
+COPY web/client ./
+RUN npm run build
 
 WORKDIR /app
-ENV NODE_ENV=production
-CMD ["npm", "run", "serve"]
+CMD ["node", "dist/index.js"]

@@ -3,11 +3,14 @@
   "version": "3.0.0",
   "private": true,
   "license": "MIT",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
-    "debug": "node --inspect-brk -r ts-node/register src/index.ts",
-    "dev": "cross-env NODE_ENV=development nodemon --exec ts-node src/index.ts --ignore ../client",
-    "serve": "cross-env NODE_ENV=production ts-node src/index.ts"
+    "debug": "node --inspect-brk --loader @swc-node/register/esm src/index.ts",
+    "dev": "cross-env NODE_ENV=development nodemon --ext ts,js --exec \"node --loader @swc-node/register/esm\" src/index.ts --ignore ../client",
+    "build": "swc ./src -d dist",
+    "serve": "cross-env NODE_ENV=production node --enable-source-maps dist/index.js",
+    "start": "npm run typecheck && npm run build && npm run serve",
+    "typecheck": "tsc --noEmit"
   },
   "type": "module",
   "engines": {
@@ -22,12 +25,14 @@
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
+    "@swc-node/register": "^1.9.0",
+    "@swc/cli": "^0.3.14",
+    "@swc/core": "^1.11.24",
     "@types/express": "^5.0.1",
     "@types/node": "^22.15.14",
     "@types/sqlite3": "^3.1.11",
     "nodemon": "^3.1.9",
     "pretty-quick": "^4.1.1",
-    "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }
 }

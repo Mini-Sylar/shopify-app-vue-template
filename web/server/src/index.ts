@@ -28,7 +28,7 @@ app.get(
 )
 app.post(
   shopify.config.webhooks.path,
-  validateWebhookRequest,
+  // validateWebhookRequest,
   shopify.processWebhooks({ webhookHandlers: WebhookHandlers })
 )
 
