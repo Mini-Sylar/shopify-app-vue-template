@@ -6,7 +6,7 @@ import { Webhook } from '../models/sqlite/webhooks.js'
 
 export const DB_PATH = path.join(process.cwd(), 'src/database/database.sqlite')
 
-export function initDatabase() {
+export function initDatabase(): void {
   // Check if the database file exists
   if (!fs.existsSync(DB_PATH)) {
     // Create the database file
@@ -14,7 +14,7 @@ export function initDatabase() {
     console.log(`Database created at ${DB_PATH}`)
   }
 
-  const database_dev = new SQLite.Database(DB_PATH, (err) => {
+  const database_dev = new SQLite.Database(DB_PATH, (err: Error | null) => {
     if (err) {
       console.error('Error opening database', err)
       throw new Error('Failed to connect to database')

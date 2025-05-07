@@ -1,7 +1,6 @@
-// @ts-check
 import { join } from 'path'
 import { readFileSync } from 'fs'
-import express from 'express'
+import express, { Request, Response } from 'express'
 import serveStatic from 'serve-static'
 import shopify from './shopify.js'
 import WebhookHandlers from './webhooks/webhooks.js'
@@ -40,10 +39,13 @@ app.use(express.json())
 app.use('/api/products', productsRoutes)
 app.use(shopify.cspHeaders())
 app.use(serveStatic(STATIC_PATH, { index: false }))
-app.use('/*', shopify.ensureInstalledOnShop(), (_req, res) => {
+app.use('/*', shopify.ensureInstalledOnShop(), (_req: Request, res: Response) => {
   res
     .status(200)
     .set('Content-Type', 'text/html')
     .send(readFileSync(join(STATIC_PATH, 'index.html')))
 })
-app.listen(PORT)
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+})

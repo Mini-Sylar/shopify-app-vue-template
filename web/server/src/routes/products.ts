@@ -28,9 +28,20 @@ router.get('/create', async (req, res) => {
   try {
     await productCreator(res.locals.shopify.session)
   } catch (e) {
-    console.error(`Failed to process products/create: ${e.message}`)
-    status = 500
-    error = e.message
+    if (e instanceof GraphqlQueryError) {
+      console.error(`${e.message}\n${JSON.stringify(e.response, null, 2)}`)
+      error = e.message
+      status = 500
+    }
+    if (e instanceof Error) {
+      console.error(e.message)
+      error = e.message
+      status = 500
+    } else {
+      console.error('Unknown error:', e)
+      error = 'Unknown error'
+      status = 500
+    }
   }
   res.status(status).send({ success: status === 200, error })
 })

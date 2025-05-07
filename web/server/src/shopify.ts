@@ -1,4 +1,4 @@
-import { BillingInterval, LATEST_API_VERSION } from '@shopify/shopify-api'
+import { BillingInterval, LATEST_API_VERSION, ApiVersion } from '@shopify/shopify-api'
 import { shopifyApp } from '@shopify/shopify-app-express'
 import { SQLiteSessionStorage } from '@shopify/shopify-app-session-storage-sqlite'
 // import { restResources } from "@shopify/shopify-api/rest/admin/2024-10";
@@ -13,14 +13,14 @@ const billingConfig = {
   'My Shopify One-Time Charge': {
     // This is an example configuration that would do a one-time charge for $5 (only USD is currently supported)
     amount: 5.0,
-    currencyCode: 'USD',
+    currencyCode: 'USD' as const,
     interval: BillingInterval.OneTime
   }
 }
 
 const shopify = shopifyApp({
   api: {
-    apiVersion: LATEST_API_VERSION,
+    apiVersion: LATEST_API_VERSION as ApiVersion,
     // restResources, if you need to use REST API @deprecated
     billing: undefined // or replace with billingConfig above to enable example billing
   },
