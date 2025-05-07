@@ -40,7 +40,9 @@ router.beforeEach(async (to, _from, next) => {
   /**
    * @type {string} locale
    */
-  const paramsLocale = Array.isArray(to.params.locale) ? to.params.locale[0] : to.params.locale
+  const paramsLocale = Array.isArray(to.params.locale)
+    ? (to.params.locale[0] as (typeof SUPPORT_LOCALES)[number])
+    : (to.params.locale as (typeof SUPPORT_LOCALES)[number])
   const locale =
     localStorage.getItem('app_locale') || i18n.global.locale || i18n.global.fallbackLocale
   // use locale if paramsLocale is not in SUPPORT_LOCALES
@@ -49,9 +51,7 @@ router.beforeEach(async (to, _from, next) => {
   }
 
   // load locale messages
-  if (!i18n.global.availableLocales.includes(paramsLocale)) {
-    await loadLocaleMessages(i18n, paramsLocale)
-  }
+  await loadLocaleMessages(i18n, paramsLocale)
 
   // set i18n language
   setI18nLanguage(i18n, paramsLocale)

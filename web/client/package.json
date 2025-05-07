@@ -8,18 +8,31 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint src/**/*.{js,vue,ts} --fix --ignore-pattern .gitignore",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "type-check": "vue-tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
-    "pinia": "^3.0.1",
+    "pinia": "^3.0.2",
     "vue": "^3.5.13",
-    "vue-i18n": "^11.1.2",
-    "vue-router": "^4.5.0"
+    "vue-i18n": "^11.1.3",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.11.0",
-    "@shopify/app-bridge-types": "^0.0.18",
+    "@tsconfig/node22": "^22.0.1",
+    "@types/node": "^22.15.14",
     "@vitejs/plugin-vue": "^5.2.3",
-    "vite": "^6.2.5"
+    "@shopify/app-bridge-types": "^0.0.18",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.5.0",
+    "@vue/tsconfig": "^0.7.0",
+    "eslint": "^9.26.0",
+    "eslint-plugin-vue": "~10.1.0",
+    "jiti": "^2.4.2",
+    "npm-run-all2": "^8.0.1",
+    "prettier": "3.5.3",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5",
+    "vite-plugin-vue-devtools": "^7.7.6",
+    "vue-tsc": "^2.2.10"
   }
 }

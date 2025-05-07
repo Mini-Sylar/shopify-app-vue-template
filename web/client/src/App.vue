@@ -7,7 +7,7 @@
   </RouterView>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { RouterView } from 'vue-router'
 import WelcomeNavBar from './components/NavBar/WelcomeNavBar.vue'
 </script>

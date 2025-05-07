@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { SUPPORT_LOCALES } from '@/i18n'
 import { ref, watchEffect } from 'vue'
 import { useRouter, useRoute } from 'vue-router'

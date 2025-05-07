@@ -96,7 +96,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useProductCounterStore } from '@/stores/products'
 import { storeToRefs } from 'pinia'
 import { appBridge } from '@/plugins/appBridge'

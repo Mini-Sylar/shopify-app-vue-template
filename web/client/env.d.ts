@@ -1,4 +1,6 @@
 /// <reference types="vite/client" />
+/// <reference types="@shopify/app-bridge-types" />
+
 interface ImportMetaEnv {
   // more env variables...
 }

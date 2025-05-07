@@ -4,6 +4,6 @@
   </main>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import TheAbout from '../components/About/TheAbout.vue'
 </script>
