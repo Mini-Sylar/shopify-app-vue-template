@@ -1,6 +1,3 @@
-import { Session } from '@shopify/shopify-api'
-import { ApiVersion } from '@shopify/shopify-api'
-
 export interface User {
   id: number
   shop: string
