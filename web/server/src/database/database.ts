@@ -12,7 +12,7 @@ export async function initDatabase(): Promise<void> {
     if (!fs.existsSync(dirname(DB_PATH))) {
       fs.mkdirSync(dirname(DB_PATH), { recursive: true })
     }
-    
+
     if (!fs.existsSync(DB_PATH)) {
       fs.writeFileSync(DB_PATH, '')
       console.log(`Database created at ${DB_PATH}`)
@@ -29,10 +29,7 @@ export async function initDatabase(): Promise<void> {
       })
     })
 
-    await Promise.all([
-      User.init(await database_dev),
-      Webhook.init(await database_dev)
-    ])
+    await Promise.all([User.init(await database_dev), Webhook.init(await database_dev)])
   } catch (error) {
     console.error('Failed to initialize database:', error)
     throw error
