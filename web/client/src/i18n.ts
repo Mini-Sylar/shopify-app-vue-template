@@ -41,4 +41,7 @@ export async function loadLocaleMessages(i18n: I18n, locale: SupportLocales) {
   return nextTick()
 }
 
-export const i18n = setupI18n()
+export const i18n = setupI18n({
+  fallbackLocale: 'en',
+  locale: localStorage.getItem('app_locale') || appBridge.config.locale || 'en'
+})

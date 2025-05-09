@@ -23,7 +23,9 @@ export const useProductCounterStore = defineStore('productCounter', () => {
       }
 
       const data = await response.json()
-      console.log('Product count fetched:', data)
+      if (import.meta.env.DEV) {
+        console.log('Product count fetched:', data)
+      }
       count.value = data.productsCount.count
       return data
     } finally {
@@ -46,7 +48,6 @@ export const useProductCounterStore = defineStore('productCounter', () => {
       if (!response.ok) {
         throw new Error(`Failed to create products: ${response.status}`)
       }
-      /** @type {CreateProductsResponse} */
       const data = await response.json()
       if (!data.success) {
         throw new Error(`Failed to create products: ${data.error}`)
