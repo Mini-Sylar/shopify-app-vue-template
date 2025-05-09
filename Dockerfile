@@ -16,13 +16,13 @@ ENV NODE_ENV=production
 # Create app directory
 WORKDIR /app
 
-# Install server dependencies
+# Install server dependencies (including dev dependencies for build)
 COPY web/server/package*.json ./
 RUN npm install
 
-# Build server with SWC (skip TypeScript typecheck in Docker)
+# Build server with SWC
 COPY web/server ./
-RUN npm run build
+RUN npx swc ./src -d dist
 
 # Build client
 COPY web/client/package*.json ./client/
