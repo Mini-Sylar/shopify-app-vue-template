@@ -18,7 +18,7 @@ WORKDIR /app
 
 # Install server dependencies
 COPY web/server/package*.json ./
-RUN npm ci
+RUN npm install
 
 # Build server with SWC
 COPY web/server ./
@@ -28,7 +28,7 @@ RUN npx tsc --noEmit && npm run build
 # Build client
 COPY web/client/package*.json ./client/
 WORKDIR /app/client
-RUN npm ci
+RUN npm install
 
 COPY web/client ./
 RUN npm run build
