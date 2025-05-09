@@ -36,7 +36,7 @@ const router = createRouter({
 })
 
 // i18n navigation guard
-router.beforeEach(async (to, _from, next) => {
+router.beforeResolve(async (to, _from, next) => {
   /**
    * @type {string} locale
    */
