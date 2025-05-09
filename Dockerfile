@@ -43,7 +43,7 @@ WORKDIR /app
 
 # Remove devDependencies from the server's node_modules to reduce image size
 # This command only affects the current WORKDIR's node_modules
-RUN npm prune --production
+RUN npm prune --omit=dev
 
 # Now, set NODE_ENV to production for the runtime environment
 ENV NODE_ENV=production
@@ -52,4 +52,4 @@ ENV NODE_ENV=production
 EXPOSE 8081
 
 # Start the server using the SWC-compiled output
-CMD ["node", "dist/index.js"]
+CMD ["node", "dist/src/index.js"]
