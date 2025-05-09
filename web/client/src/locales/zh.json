@@ -35,5 +35,14 @@
   "Products.products-error": "错误创建产品",
   "Products.products-success": "成功创建了产品",
   "Products.subheading": "样本产品是用默认标题和价格创建的。\n您可以随时删除它们",
-  "Products.total-products": "总产品"
+  "Products.total-products": "总产品",
+  "HomePage.feature-list-vue[4].description": "下一代前端工具",
+  "HomePage.feature-list-vue[4].title": "Vite⚡",
+  "HomePage.feature-list-vue[4].url": "https://vitejs.dev/",
+  "HomePage.feature-list-vue[5].description": "客户端和服务器上的完全键入代码库",
+  "HomePage.feature-list-vue[5].title": "打字稿🔤",
+  "HomePage.feature-list-vue[5].url": "https://www.typescriptlang.org/",
+  "HomePage.feature-list-vue[6].description": "开发服务器使用SWC快速刷新并构建",
+  "HomePage.feature-list-vue[6].title": "SWC🚀",
+  "HomePage.feature-list-vue[6].url": "https://swc.rs/"
 }

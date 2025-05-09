@@ -29,6 +29,21 @@
         "title": "vue-i18n-intlify 🌐",
         "description": "Internationalization plugin for Vue.js, Easy, powerful, and component-oriented for Vue.js",
         "url": "https://vue-i18n.intlify.dev/"
+      },
+      {
+        "title": "Vite ⚡",
+        "description": "Next Generation Frontend Tooling",
+        "url": "https://vitejs.dev/"
+      },
+      {
+        "title": "Typescript 🔤",
+        "description": "Fully typed codebase on both client and server",
+        "url": "https://www.typescriptlang.org/"
+      },
+      {
+        "title": "SWC 🚀",
+        "description": "Dev server uses SWC for fast refresh and build",
+        "url": "https://swc.rs/"
       }
     ],
     "authenticated_fetch": {
