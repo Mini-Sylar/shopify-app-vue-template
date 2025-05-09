@@ -26,10 +26,10 @@
   },
   "devDependencies": {
     "@swc-node/register": "^1.10.10",
-    "@swc/cli": "^0.7.4",
+    "@swc/cli": "^0.7.5",
     "@swc/core": "^1.11.24",
     "@types/express": "^5.0.1",
-    "@types/node": "^22.15.14",
+    "@types/node": "^22.15.17",
     "nodemon": "^3.1.10",
     "pretty-quick": "^4.1.1",
     "typescript": "^5.8.3"

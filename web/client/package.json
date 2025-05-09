@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.1",
-    "@types/node": "^22.15.14",
+    "@types/node": "^22.15.17",
     "@vitejs/plugin-vue": "^5.2.3",
     "@shopify/app-bridge-types": "^0.0.18",
     "@vue/eslint-config-prettier": "^10.2.0",

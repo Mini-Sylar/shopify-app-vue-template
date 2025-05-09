@@ -30,7 +30,7 @@
     "server:uninstall": "npm uninstall --workspace web/server"
   },
   "optionalDependencies": {
-    "@shopify/cli": "^3.79.0"
+    "@shopify/cli": "^3.79.1"
   },
   "devDependencies": {
     "eslint": "^9.26.0",
