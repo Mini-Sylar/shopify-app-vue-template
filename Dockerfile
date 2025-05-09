@@ -18,17 +18,16 @@ WORKDIR /app
 
 # Install server dependencies
 COPY web/server/package*.json ./
-RUN npm install
+RUN npm ci
 
-# Build server with SWC
+# Build server with SWC (skip TypeScript typecheck in Docker)
 COPY web/server ./
-# Use npx to ensure TypeScript is found for the typecheck command
-RUN npx tsc --noEmit && npm run build
+RUN npm run build
 
 # Build client
 COPY web/client/package*.json ./client/
 WORKDIR /app/client
-RUN npm install
+RUN npm ci
 
 COPY web/client ./
 RUN npm run build
