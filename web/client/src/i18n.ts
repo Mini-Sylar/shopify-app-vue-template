@@ -45,6 +45,6 @@ export const i18n = setupI18n({
   fallbackLocale: 'en',
   locale: localStorage.getItem('app_locale') || appBridge.config.locale || 'en',
   messages: {
-    en
+    en // remove for lazy loading
   }
 })
