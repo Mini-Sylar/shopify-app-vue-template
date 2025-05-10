@@ -28,7 +28,13 @@ You can also:
 
 ## Getting Started
 
-1. Clone this repository or `npx degit Mini-Sylar/shopify-app-vue-template your-app-name`
+1. Clone this repository 
+```bash
+npx degit Mini-Sylar/shopify-app-vue-template your-app-name
+
+# for typescript
+npx degit Mini-Sylar/shopify-app-vue-template#typescript your-app-name 
+```
 2. Run `npm install` in the root directory
 3. Run `npm run dev:reset` to configure your app (Initial setup only!)
 4. Run `npm run dev` to start the app (Subsequent runs)
