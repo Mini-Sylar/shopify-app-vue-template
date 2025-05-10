@@ -11,7 +11,7 @@ export const Webhook = {
     if (!(await this.__hasWebhooksTable())) {
       const query = `CREATE TABLE ${this.webhooksTableName} (
               id INTEGER PRIMARY KEY AUTOINCREMENT,
-                webhook_id INTEGER NOT NULL,
+                webhook_id TEXT NOT NULL,
                 webhook_topic TEXT NOT NULL,
                 shop TEXT NOT NULL,
                 timestamp TEXT NOT NULL,
