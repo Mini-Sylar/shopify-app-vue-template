@@ -19,7 +19,8 @@
     "compression": "^1.8.0",
     "cross-env": "^7.0.3",
     "serve-static": "^2.2.0",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.1.7",
+    "express-rate-limit": "^7.5.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10",
