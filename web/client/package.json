@@ -17,6 +17,8 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "eslint-plugin-vue": "^10.1.0",
+    "@vue/eslint-config-prettier": "^10.2.0",
     "@rushstack/eslint-patch": "^1.11.0",
     "@shopify/app-bridge-types": "^0.0.18",
     "@vitejs/plugin-vue": "^5.2.4",

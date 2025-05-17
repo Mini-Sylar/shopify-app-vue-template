@@ -19,9 +19,10 @@
     "generate": "shopify app generate",
     "deploy": "shopify app deploy",
     "show:env": "shopify app env show",
-    "lint": "eslint web/**/src/**/*.{js,vue,ts} --fix --ignore-pattern .gitignore",
+    "lint": "npm-run-all2 --parallel lint:*",
     "lint:server": "eslint web/server/src/**/*.{js,ts} --fix --ignore-pattern .gitignore",
     "lint:client": "eslint web/client/src/**/*.{js,vue,ts} --fix --ignore-pattern .gitignore",
+    "format": "npm-run-all2 --parallel format:*",
     "format:server": "prettier --write web/server/src/",
     "format:client": "prettier --write web/client/src/",
     "client:install": "npm install --workspace web/client",
@@ -34,9 +35,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.27.0",
-    "@vue/eslint-config-prettier": "^10.2.0",
     "eslint": "^9.27.0",
-    "eslint-plugin-vue": "^10.1.0",
-    "prettier": "^3.5.3"
+    "prettier": "^3.5.3",
+    "npm-run-all2": "^8.0.2"
   }
 }

@@ -43,11 +43,11 @@ export async function loadLocaleMessages(i18n, locale) {
 }
 
 export const i18n = setupI18n({
-  locale: localStorage.getItem('app_locale') || appBridge.config.locale || 'en',
+  locale: localStorage.getItem('app_locale') || appBridge?.config?.locale || 'en',
   messages: {
     en, // Remove line for lazy loading
     zh
   },
-  fallbackLocale: localStorage.getItem('app_locale') || appBridge.config.locale || 'en',
+  fallbackLocale: localStorage.getItem('app_locale') || appBridge?.config?.locale || 'en',
   legacy: false
 })
