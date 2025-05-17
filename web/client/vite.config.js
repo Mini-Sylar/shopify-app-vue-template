@@ -44,6 +44,7 @@ export default defineConfig({
   plugins: [
     {
       name: 'vite-plugin-replace-shopify-api-key',
+      enforce: 'pre',
       transformIndexHtml() {
         return {
           tags: [

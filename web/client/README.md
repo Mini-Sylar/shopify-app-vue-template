@@ -35,8 +35,6 @@ Frontend for shopify-app-vue-template. Dependencies are automatically installed 
      │  │  └─ NavBar
      │  │     ├─ LanguageSwitcher.vue
      │  │     └─ WelcomeNavBar.vue
-     │  ├─ services
-     │  │  └─ useAuthenticatedFetch.js
      │  ├─ i18n.js
      │  ├─ locales
      │  │  ├─ en.json
