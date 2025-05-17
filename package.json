@@ -1,6 +1,6 @@
 {
   "name": "shopify-app-vue-template",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "main": "web/server/src/index.js",
   "license": "MIT",
   "type": "module",
@@ -19,21 +19,26 @@
     "generate": "shopify app generate",
     "deploy": "shopify app deploy",
     "show:env": "shopify app env show",
-    "lint": "eslint web/**/src/**/*.{js,vue,ts} --fix --ignore-pattern .gitignore",
+    "lint": "npm-run-all2 --parallel lint:*",
     "lint:server": "eslint web/server/src/**/*.{js,ts} --fix --ignore-pattern .gitignore",
     "lint:client": "eslint web/client/src/**/*.{js,vue,ts} --fix --ignore-pattern .gitignore",
+    "format": "npm-run-all2 --parallel format:*",
     "format:server": "prettier --write web/server/src/",
     "format:client": "prettier --write web/client/src/",
     "client:install": "npm install --workspace web/client",
     "client:uninstall": "npm uninstall --workspace web/client",
     "server:install": "npm install --workspace web/server",
-    "server:uninstall": "npm uninstall --workspace web/server"
+    "server:uninstall": "npm uninstall --workspace web/server",
+    "typecheck": "npm-run-all2 --parallel typecheck:*",
+    "typecheck:client": "npm run typecheck --workspace web/client",
+    "typecheck:server": "npm run typecheck --workspace web/server"
   },
   "optionalDependencies": {
     "@shopify/cli": "^3.79.1"
   },
   "devDependencies": {
     "eslint": "^9.26.0",
-    "prettier": "^3.5.3"
+    "prettier": "^3.5.3",
+    "npm-run-all2": "^8.0.2"
   }
 }

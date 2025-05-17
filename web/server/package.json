@@ -1,6 +1,6 @@
 {
   "name": "server",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "private": true,
   "license": "MIT",
   "main": "dist/index.js",
@@ -26,10 +26,10 @@
   },
   "devDependencies": {
     "@swc-node/register": "^1.10.10",
-    "@swc/cli": "^0.7.5",
+    "@swc/cli": "^0.7.7",
     "@swc/core": "^1.11.24",
-    "@types/express": "^5.0.1",
-    "@types/node": "^22.15.17",
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.18",
     "nodemon": "^3.1.10",
     "pretty-quick": "^4.1.1",
     "typescript": "^5.8.3"
