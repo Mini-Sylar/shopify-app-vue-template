@@ -8,7 +8,7 @@ if (
   !process.env.CI &&
   !process.env.SHOPIFY_API_KEY
 ) {
-  console.warn(
+  throw new Error(
     '\nBuilding the frontend app without an API key. The frontend build will not run without an API key. Set the SHOPIFY_API_KEY environment variable when running the build command.\n'
   )
 }
@@ -44,11 +44,26 @@ export default defineConfig({
   plugins: [
     {
       name: 'vite-plugin-replace-shopify-api-key',
-      transformIndexHtml: {
-        handler(html) {
-          return html.replace(/%VITE_SHOPIFY_API_KEY%/g, process.env.SHOPIFY_API_KEY)
-        },
-        order: 'pre'
+      transformIndexHtml() {
+        return {
+          tags: [
+            {
+              injectTo: 'head-prepend',
+              tag: 'meta',
+              attrs: {
+                name: 'shopify-api-key',
+                content: process.env.SHOPIFY_API_KEY
+              }
+            },
+            {
+              injectTo: 'head-prepend',
+              tag: 'script',
+              attrs: {
+                src: 'https://cdn.shopify.com/shopifycloud/app-bridge.js'
+              }
+            }
+          ]
+        }
       }
     },
     vue()

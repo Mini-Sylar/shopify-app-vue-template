@@ -6,9 +6,7 @@ import { appBridge } from './plugins/appBridge'
 
 export const SUPPORT_LOCALES = ['en', 'zh']
 
-export function setupI18n(
-  options = { locale: localStorage.getItem('app_locale') || appBridge.config.locale || 'en' }
-) {
+export function setupI18n(options) {
   const i18n = createI18n(options)
   setI18nLanguage(i18n, options.locale)
   return i18n
