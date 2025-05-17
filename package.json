@@ -1,6 +1,6 @@
 {
   "name": "shopify-app-vue-template",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "main": "web/server/src/index.js",
   "license": "MIT",
   "type": "module",
@@ -30,13 +30,13 @@
     "server:uninstall": "npm uninstall --workspace web/server"
   },
   "optionalDependencies": {
-    "@shopify/cli": "^3.77.1"
+    "@shopify/cli": "^3.80.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.23.0",
+    "@eslint/js": "^9.27.0",
     "@vue/eslint-config-prettier": "^10.2.0",
-    "eslint": "^9.23.0",
-    "eslint-plugin-vue": "^10.0.0",
+    "eslint": "^9.27.0",
+    "eslint-plugin-vue": "^10.1.0",
     "prettier": "^3.5.3"
   }
 }

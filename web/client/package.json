@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,15 +11,15 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "pinia": "^3.0.1",
-    "vue": "^3.5.13",
-    "vue-i18n": "^11.1.2",
-    "vue-router": "^4.5.0"
+    "pinia": "^3.0.2",
+    "vue": "^3.5.14",
+    "vue-i18n": "^11.1.3",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.11.0",
     "@shopify/app-bridge-types": "^0.0.18",
-    "@vitejs/plugin-vue": "^5.2.3",
-    "vite": "^6.2.5"
+    "@vitejs/plugin-vue": "^5.2.4",
+    "vite": "^6.3.5"
   }
 }
