@@ -8,11 +8,7 @@ export const SUPPORT_LOCALES = ['en', 'zh']
 export type SupportLocales = (typeof SUPPORT_LOCALES)[number]
 export type MessageSchema = typeof en
 
-function setupI18n(
-  options: I18nOptions = {
-    locale: localStorage.getItem('app_locale') || appBridge.config.locale || 'en'
-  }
-) {
+function setupI18n(options: I18nOptions) {
   const i18n = createI18n(options)
   if (options.locale) {
     setI18nLanguage(i18n, options.locale)
@@ -46,5 +42,6 @@ export const i18n = setupI18n({
   locale: localStorage.getItem('app_locale') || appBridge.config.locale || 'en',
   messages: {
     en // remove for lazy loading
-  }
+  },
+  legacy: false
 })

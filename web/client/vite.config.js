@@ -13,8 +13,6 @@ if (
   )
 }
 
-process.env.VITE_SHOPIFY_API_KEY = process.env.SHOPIFY_API_KEY
-
 const proxyOptions = {
   target: `http://127.0.0.1:${process.env.BACKEND_PORT}`,
   changeOrigin: false,
@@ -46,11 +44,26 @@ export default defineConfig({
   plugins: [
     {
       name: 'vite-plugin-replace-shopify-api-key',
-      transformIndexHtml: {
-        handler(html) {
-          return html.replace(/%VITE_SHOPIFY_API_KEY%/g, process.env.SHOPIFY_API_KEY)
-        },
-        order: 'pre'
+      transformIndexHtml() {
+        return {
+          tags: [
+            {
+              injectTo: 'head-prepend',
+              tag: 'meta',
+              attrs: {
+                name: 'shopify-api-key',
+                content: process.env.SHOPIFY_API_KEY
+              }
+            },
+            {
+              injectTo: 'head-prepend',
+              tag: 'script',
+              attrs: {
+                src: 'https://cdn.shopify.com/shopifycloud/app-bridge.js'
+              }
+            }
+          ]
+        }
       }
     },
     vue()
