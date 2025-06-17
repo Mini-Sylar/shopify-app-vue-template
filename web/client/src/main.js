@@ -1,3 +1,27 @@
+// --- Shopify shop param persistence logic ---
+function getQueryParam(name) {
+  const url = new URL(window.location.href)
+  return url.searchParams.get(name)
+}
+
+function setQueryParam(name, value) {
+  const url = new URL(window.location.href)
+  url.searchParams.set(name, value)
+  window.location.replace(url.toString())
+}
+
+const shopParam = getQueryParam('shop')
+if (shopParam) {
+  localStorage.setItem('shop', shopParam)
+} else {
+  const storedShop = localStorage.getItem('shop')
+  if (storedShop) {
+    setQueryParam('shop', storedShop)
+    // The page will reload with the shop param, so stop further execution
+    throw new Error('Reloading with shop param')
+  }
+}
+
 import './assets/main.css'
 
 import { createApp } from 'vue'
