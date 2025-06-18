@@ -1,6 +1,6 @@
 {
   "name": "shopify-app-vue-template",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "main": "web/server/src/index.js",
   "license": "MIT",
   "type": "module",
@@ -13,6 +13,7 @@
     "shopify": "shopify",
     "build": "shopify app build",
     "dev": "shopify app dev",
+    "dev:local": "shopify app dev --use-localhost",
     "dev:reset": "shopify app dev --reset",
     "dev:webhook": "shopify app webhook trigger",
     "info": "shopify app info",
@@ -31,12 +32,12 @@
     "server:uninstall": "npm uninstall --workspace web/server"
   },
   "optionalDependencies": {
-    "@shopify/cli": "^3.80.0"
+    "@shopify/cli": "^3.81.2"
   },
   "devDependencies": {
-    "@eslint/js": "^9.27.0",
-    "eslint": "^9.27.0",
+    "@eslint/js": "^9.29.0",
+    "eslint": "^9.29.0",
     "prettier": "^3.5.3",
-    "npm-run-all2": "^8.0.2"
+    "npm-run-all2": "^8.0.4"
   }
 }
