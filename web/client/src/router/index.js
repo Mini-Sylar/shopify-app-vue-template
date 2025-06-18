@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
+import ExitIframe from '../views/ExitIframe.vue'
 import { setI18nLanguage, SUPPORT_LOCALES, loadLocaleMessages, i18n } from '@/i18n'
 
 const router = createRouter({
@@ -24,9 +25,7 @@ const router = createRouter({
     {
       path: '/exitiframe',
       name: 'exitiframe',
-      redirect: {
-        name: 'home'
-      }
+      component: ExitIframe
     },
     {
       path: '/pathMatch(.*)',

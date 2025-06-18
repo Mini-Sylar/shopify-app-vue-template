@@ -40,26 +40,7 @@ app.use(express.json())
 app.use('/api/products', productsRoutes)
 app.use(shopify.cspHeaders())
 app.use(serveStatic(STATIC_PATH, { index: false }))
-app.use('/*', (req, res) => {
-  // Check for required Shopify params
-  const shop = req.query.shop
-  // Basic validation for shop param (must end with .myshopify.com and be a valid domain)
-  const isValidShop =
-    typeof shop === 'string' && /^[a-zA-Z0-9][a-zA-Z0-9-]*\.myshopify\.com$/.test(shop)
-
-  if (!isValidShop) {
-    // Prevent open redirect by not reflecting arbitrary returnTo
-    const shopifyAuthPath = shopify.config.auth.path
-    // Optionally, you could try to recover from a session/cookie here
-    // Only allow returnTo to be a relative path
-    let returnTo = '/'
-    if (req.originalUrl && req.originalUrl.startsWith('/')) {
-      returnTo = req.originalUrl
-    }
-    // Redirect to Shopify OAuth with a safe returnTo param
-    return res.redirect(`${shopifyAuthPath}?returnTo=${encodeURIComponent(returnTo)}`)
-  }
-
+app.use('/*', shopify.ensureInstalledOnShop(), (_req, res) => {
   res
     .status(200)
     .set('Content-Type', 'text/html')
