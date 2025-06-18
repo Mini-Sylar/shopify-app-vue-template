@@ -1,6 +1,6 @@
 {
   "name": "server",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "private": true,
   "license": "MIT",
   "main": "dist/index.js",
@@ -17,8 +17,8 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "@shopify/shopify-app-express": "^5.0.17",
-    "@shopify/shopify-app-session-storage-sqlite": "^4.0.17",
+    "@shopify/shopify-app-express": "^5.0.18",
+    "@shopify/shopify-app-session-storage-sqlite": "^4.0.18",
     "compression": "^1.8.0",
     "cross-env": "^7.0.3",
     "serve-static": "^2.2.0",
@@ -27,11 +27,11 @@
   "devDependencies": {
     "@swc-node/register": "^1.10.10",
     "@swc/cli": "^0.7.7",
-    "@swc/core": "^1.11.24",
-    "@types/express": "^5.0.2",
-    "@types/node": "^22.15.18",
+    "@swc/core": "^1.12.1",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.3",
     "nodemon": "^3.1.10",
-    "pretty-quick": "^4.1.1",
+    "pretty-quick": "^4.2.2",
     "typescript": "^5.8.3"
   }
 }

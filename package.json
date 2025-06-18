@@ -1,6 +1,6 @@
 {
   "name": "shopify-app-vue-template",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "main": "web/server/src/index.js",
   "license": "MIT",
   "type": "module",
@@ -34,11 +34,11 @@
     "typecheck:server": "npm run typecheck --workspace web/server"
   },
   "optionalDependencies": {
-    "@shopify/cli": "^3.79.1"
+    "@shopify/cli": "^3.81.2"
   },
   "devDependencies": {
-    "eslint": "^9.26.0",
+    "eslint": "^9.29.0",
     "prettier": "^3.5.3",
-    "npm-run-all2": "^8.0.2"
+    "npm-run-all2": "^8.0.4"
   }
 }
