@@ -39,20 +39,15 @@ app.use(express.json())
 app.use('/api/products', productsRoutes)
 app.use(shopify.cspHeaders())
 app.use(serveStatic(STATIC_PATH, { index: false }))
-app.use('/*', shopify.ensureInstalledOnShop(), (_req: Request, res: Response) => {
-  // Read the HTML file
-  let htmlContent = readFileSync(join(STATIC_PATH, 'index.html'), 'utf8')
-
-  if (process.env.NODE_ENV !== 'production') {
-    const apiKey = process.env.SHOPIFY_API_KEY || ''
-    console.log(`[Dev Server] Injecting Shopify API Key: ${apiKey}`)
-    const shopifyTags = `
-  <meta name="shopify-api-key" content="${apiKey}" />
-  <script src="https://cdn.shopify.com/shopifycloud/app-bridge.js"></script>`
-    htmlContent = htmlContent.replace('</head>', `${shopifyTags}\n</head>`)
-  }
-
-  res.status(200).set('Content-Type', 'text/html').send(htmlContent)
+app.use('/*', shopify.ensureInstalledOnShop(), (_req, res) => {
+  res
+    .status(200)
+    .set('Content-Type', 'text/html')
+    .send(
+      readFileSync(join(STATIC_PATH, 'index.html'))
+        .toString()
+        .replace('%VITE_SHOPIFY_API_KEY%', process.env.SHOPIFY_API_KEY || '')
+    )
 })
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)

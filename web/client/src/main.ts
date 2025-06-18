@@ -1,3 +1,4 @@
+import './plugins/shopify-shop-param'
 import './assets/main.css'
 
 import { createApp } from 'vue'
