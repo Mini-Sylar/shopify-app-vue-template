@@ -32,12 +32,12 @@
     "server:uninstall": "npm uninstall --workspace web/server"
   },
   "optionalDependencies": {
-    "@shopify/cli": "^3.81.2"
+    "@shopify/cli": "^3.83.3"
   },
   "devDependencies": {
-    "@eslint/js": "^9.29.0",
-    "eslint": "^9.29.0",
-    "prettier": "^3.5.3",
+    "@eslint/js": "^9.33.0",
+    "eslint": "^9.33.0",
+    "prettier": "^3.6.2",
     "npm-run-all2": "^8.0.4"
   }
 }
