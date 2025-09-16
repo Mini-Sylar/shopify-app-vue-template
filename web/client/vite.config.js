@@ -21,6 +21,7 @@ const proxyOptions = {
 }
 
 const host = new URL(process.env.SHOPIFY_APP_URL || 'http://localhost').hostname
+console.log('Vite config host:', host)
 
 let hmrConfig
 if (host === 'localhost') {
@@ -58,6 +59,7 @@ export default defineConfig({
     proxy: {
       '^/(\\?.*)?$': proxyOptions,
       '^/api(/|(\\?.*)?$)': proxyOptions
-    }
+    },
+    allowedHosts: process.env.NODE_ENV === 'development' ? true : [host]
   }
 })
