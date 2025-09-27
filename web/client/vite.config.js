@@ -59,5 +59,6 @@ export default defineConfig({
       '^/(\\?.*)?$': proxyOptions,
       '^/api(/|(\\?.*)?$)': proxyOptions
     }
-  }
+  },
+  allowedHosts: process.env.NODE_ENV === 'development' ? true : [host]
 })
