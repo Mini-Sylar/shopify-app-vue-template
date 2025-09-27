@@ -14,8 +14,8 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "@shopify/shopify-app-express": "^5.0.20",
-    "@shopify/shopify-app-session-storage-sqlite": "^4.0.20",
+    "@shopify/shopify-app-express": "^6.0.0",
+    "@shopify/shopify-app-session-storage-sqlite": "^5.0.0",
     "compression": "^1.8.1",
     "cross-env": "^10.0.0",
     "serve-static": "^2.2.0",

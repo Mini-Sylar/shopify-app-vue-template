@@ -1,4 +1,4 @@
-import { BillingInterval, LATEST_API_VERSION } from '@shopify/shopify-api'
+import { BillingInterval, ApiVersion } from '@shopify/shopify-api'
 import { shopifyApp } from '@shopify/shopify-app-express'
 import { SQLiteSessionStorage } from '@shopify/shopify-app-session-storage-sqlite'
 // import { restResources } from "@shopify/shopify-api/rest/admin/2024-10";
@@ -20,7 +20,7 @@ const billingConfig = {
 
 const shopify = shopifyApp({
   api: {
-    apiVersion: LATEST_API_VERSION,
+    apiVersion: ApiVersion.July25,
     // restResources, if you need to use REST API @deprecated
     billing: undefined // or replace with billingConfig above to enable example billing
   },
