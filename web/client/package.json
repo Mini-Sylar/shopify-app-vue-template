@@ -22,6 +22,6 @@
     "@rushstack/eslint-patch": "^1.12.0",
     "@shopify/app-bridge-types": "^0.4.0",
     "@vitejs/plugin-vue": "^6.0.1",
-    "vite": "^7.1.7"
+    "vite": "^7.1.11"
   }
 }
