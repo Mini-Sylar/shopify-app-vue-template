@@ -34,10 +34,10 @@
     "typecheck:server": "npm run typecheck --workspace web/server"
   },
   "optionalDependencies": {
-    "@shopify/cli": "^3.85.2"
+    "@shopify/cli": "^3.87.4"
   },
   "devDependencies": {
-    "eslint": "^9.36.0",
+    "eslint": "^9.39.1",
     "prettier": "^3.6.2",
     "npm-run-all2": "^8.0.4"
   }
