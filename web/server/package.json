@@ -14,15 +14,15 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "@shopify/shopify-app-express": "^6.0.0",
-    "@shopify/shopify-app-session-storage-sqlite": "^5.0.0",
+    "@shopify/shopify-app-express": "^6.0.3",
+    "@shopify/shopify-app-session-storage-sqlite": "^5.0.3",
     "compression": "^1.8.1",
-    "cross-env": "^10.0.0",
+    "cross-env": "^10.1.0",
     "serve-static": "^2.2.0",
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10",
+    "nodemon": "^3.1.11",
     "pretty-quick": "^4.2.2"
   }
 }
