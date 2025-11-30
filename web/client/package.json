@@ -12,12 +12,12 @@
   },
   "dependencies": {
     "pinia": "^3.0.4",
-    "vue": "^3.5.24",
-    "vue-i18n": "^11.1.12",
+    "vue": "^3.5.25",
+    "vue-i18n": "^11.2.2",
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
-    "eslint-plugin-vue": "^10.6.0",
+    "eslint-plugin-vue": "^10.6.2",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@rushstack/eslint-patch": "^1.15.0",
     "@shopify/app-bridge-types": "^0.5.3",
