@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json.schemastore.org/swcrc",
+  "$schema": "https://swc.rs/schema.json",
   "jsc": {
     "parser": {
       "syntax": "typescript",
@@ -7,7 +7,7 @@
       "decorators": true,
       "dynamicImport": true
     },
-    "transform": null,
+    "transform": {},
     "target": "es2022",
     "loose": false,
     "externalHelpers": false,
