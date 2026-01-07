@@ -44,7 +44,7 @@ export default defineConfig({
   root: dirname(fileURLToPath(import.meta.url)),
   plugins: [vue()],
   define: {
-    'process.env.SHOPIFY_API_KEY': JSON.stringify(process.env.SHOPIFY_API_KEY)
+    'process.env.VITE_SHOPIFY_API_KEY': JSON.stringify(process.env.SHOPIFY_API_KEY || '')
   },
   resolve: {
     preserveSymlinks: true,
