@@ -12,16 +12,16 @@
   },
   "dependencies": {
     "pinia": "^3.0.4",
-    "vue": "^3.5.26",
+    "vue": "^3.5.28",
     "vue-i18n": "^11.2.8",
-    "vue-router": "^4.6.4"
+    "vue-router": "^5.0.3"
   },
   "devDependencies": {
-    "eslint-plugin-vue": "^10.6.2",
+    "eslint-plugin-vue": "^10.8.0",
     "@vue/eslint-config-prettier": "^10.2.0",
-    "@rushstack/eslint-patch": "^1.15.0",
-    "@shopify/app-bridge-types": "^0.5.3",
-    "@vitejs/plugin-vue": "^6.0.3",
-    "vite": "^7.3.0"
+    "@rushstack/eslint-patch": "^1.16.1",
+    "@shopify/app-bridge-types": "^0.7.0",
+    "@vitejs/plugin-vue": "^6.0.4",
+    "vite": "^7.3.1"
   }
 }
