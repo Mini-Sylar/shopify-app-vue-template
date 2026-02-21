@@ -3,6 +3,7 @@ import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 import vue from '@vitejs/plugin-vue'
 
+
 if (
   process.env.npm_lifecycle_event === 'build' &&
   !process.env.CI &&
@@ -44,7 +45,7 @@ export default defineConfig({
   root: dirname(fileURLToPath(import.meta.url)),
   plugins: [vue()],
   define: {
-    'process.env.VITE_SHOPIFY_API_KEY': JSON.stringify(process.env.SHOPIFY_API_KEY || '')
+    'import.meta.env.VITE_SHOPIFY_API_KEY': JSON.stringify(process.env.SHOPIFY_API_KEY || '')
   },
   resolve: {
     preserveSymlinks: true,

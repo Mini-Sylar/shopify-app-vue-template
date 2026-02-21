@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import SQLite from 'sqlite3'
+import BetterSqlite from 'better-sqlite3'
 import { User } from '../models/sqlite/user.js'
 import { Webhook } from '../models/sqlite/webhooks.js'
 
@@ -14,14 +14,12 @@ export function initDatabase() {
     console.log(`Database created at ${DB_PATH}`)
   }
 
-  const database_dev = new SQLite.Database(DB_PATH, (err) => {
-    if (err) {
-      console.error('Error opening database', err)
-      throw new Error('Failed to connect to database')
-    }
-    console.log('Connected to the SQLite database')
-  })
-
-  User.init(database_dev)
-  Webhook.init(database_dev)
+  try {
+    const database_dev = new BetterSqlite(DB_PATH, {})
+    database_dev.pragma('journal_mode = WAL')
+    User.init(database_dev)
+    Webhook.init(database_dev)
+  } catch (error) {
+    console.error('Error initializing the database:', error)
+  }
 }

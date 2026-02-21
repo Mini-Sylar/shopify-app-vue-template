@@ -14,12 +14,12 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
+    "@minisylar/shopify-app-session-storage-better-sqlite": "^1.1.0",
     "@shopify/shopify-app-express": "^6.0.5",
-    "@shopify/shopify-app-session-storage-sqlite": "^5.0.5",
+    "better-sqlite3": "^12.6.2",
     "compression": "^1.8.1",
     "cross-env": "^10.1.0",
-    "serve-static": "^2.2.1",
-    "sqlite3": "^5.1.7"
+    "serve-static": "^2.2.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.14",
