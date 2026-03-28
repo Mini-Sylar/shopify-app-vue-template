@@ -17,20 +17,20 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "@shopify/shopify-app-express": "^6.0.4",
-    "@shopify/shopify-app-session-storage-sqlite": "^5.0.4",
+    "@shopify/shopify-app-express": "^7.0.0",
+    "@shopify/shopify-app-session-storage-sqlite": "^6.0.0",
     "compression": "^1.8.1",
     "cross-env": "^10.1.0",
     "serve-static": "^2.2.1",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^6.0.1"
   },
   "devDependencies": {
     "@swc-node/register": "^1.11.1",
-    "@swc/cli": "^0.7.9",
-    "@swc/core": "^1.15.8",
+    "@swc/cli": "^0.8.0",
+    "@swc/core": "^1.15.21",
     "@types/express": "^5.0.6",
-    "@types/node": "^24.10.1",
-    "nodemon": "^3.1.11",
+    "@types/node": "^25.5.0",
+    "nodemon": "^3.1.14",
     "pretty-quick": "^4.2.2",
     "typescript": "^5.9.3"
   }
