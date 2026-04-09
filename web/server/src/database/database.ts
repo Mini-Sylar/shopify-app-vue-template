@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path, { dirname } from 'path'
-import SQLite from 'sqlite3'
+import BetterSqlite3 from 'better-sqlite3'
 import { User } from '../models/sqlite/user.js'
 import { Webhook } from '../models/sqlite/webhooks.js'
 
@@ -18,18 +18,9 @@ export async function initDatabase(): Promise<void> {
       console.log(`Database created at ${DB_PATH}`)
     }
 
-    const database_dev = new Promise<SQLite.Database>((resolve, reject) => {
-      const db = new SQLite.Database(DB_PATH, (err) => {
-        if (err) {
-          console.error('Error opening database:', err)
-          reject(err)
-          return
-        }
-        resolve(db)
-      })
-    })
+    const database_dev = new BetterSqlite3(DB_PATH)
 
-    await Promise.all([User.init(await database_dev), Webhook.init(await database_dev)])
+    await Promise.all([User.init(database_dev), Webhook.init(database_dev)])
   } catch (error) {
     console.error('Failed to initialize database:', error)
     throw error

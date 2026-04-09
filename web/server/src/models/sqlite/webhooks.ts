@@ -1,5 +1,7 @@
-import { Database } from 'sqlite3'
+import BetterSqlite3 from 'better-sqlite3'
 import { Webhook as WebhookType } from '../../types/models.type.js'
+
+type BetterSQLiteDatabase = InstanceType<typeof BetterSqlite3>
 
 interface WebhookCreate {
   user_id: number | null
@@ -16,10 +18,10 @@ interface WebhookUpdate {
 
 export const Webhook = {
   webhooksTableName: 'webhooks_dev',
-  db: null as Database | null,
+  db: null as BetterSQLiteDatabase | null,
   ready: null as Promise<void> | null,
 
-  init: async function (db: Database): Promise<void> {
+  init: async function (db: BetterSQLiteDatabase): Promise<void> {
     console.log('Initializing DEV DB: webhooks')
     this.db = db
     await this.__query(`PRAGMA foreign_keys = ON;`)
@@ -53,13 +55,13 @@ export const Webhook = {
         reject(new Error('Database not initialized'))
         return
       }
-      this.db.all(sql, params, (err: Error | null, result: any) => {
-        if (err) {
-          reject(err)
-          return
-        }
+      try {
+        const statement = this.db.prepare(sql)
+        const result = statement.reader ? statement.all(...params) : statement.run(...params)
         resolve(result)
-      })
+      } catch (err) {
+        reject(err)
+      }
     })
   },
 
@@ -67,35 +69,34 @@ export const Webhook = {
     await this.ready
     if (!this.db) throw new Error('Database not initialized')
 
-    return new Promise((resolve, reject) => {
-      this.db!.run(
-        `INSERT INTO ${this.webhooksTableName} (
-          user_id,
-          webhook_id,
-          webhook_topic,
-          shop,
-          timestamp,
-          processed
-        ) VALUES (?, ?, ?, ?, ?, ?)`,
-        [
+    try {
+      const result = this.db
+        .prepare(
+          `INSERT INTO ${this.webhooksTableName} (
+            user_id,
+            webhook_id,
+            webhook_topic,
+            shop,
+            timestamp,
+            processed
+          ) VALUES (?, ?, ?, ?, ?, ?)`
+        )
+        .run(
           data.user_id,
           data.webhook_id,
           data.webhook_topic,
           data.shop,
           data.timestamp,
           data.processed ? 1 : 0
-        ],
-        function (this: { lastID: number }, err: Error | null) {
-          if (err) {
-            console.error('Error creating webhook:', err)
-            reject(err)
-          } else {
-            console.log('Webhook created:', this.lastID)
-            resolve(this.lastID)
-          }
-        }
-      )
-    })
+        )
+
+      const lastId = Number(result.lastInsertRowid)
+      console.log('Webhook created:', lastId)
+      return lastId
+    } catch (err) {
+      console.error('Error creating webhook:', err)
+      throw err
+    }
   },
 
   read: async function (webhookId: string): Promise<WebhookType | undefined> {
@@ -103,21 +104,17 @@ export const Webhook = {
     await this.ready
     if (!this.db) throw new Error('Database not initialized')
 
-    return new Promise((resolve, reject) => {
-      this.db!.get(
-        `SELECT * FROM ${this.webhooksTableName} WHERE webhook_id = ?`,
-        [webhookId],
-        (err: Error | null, row: WebhookType) => {
-          if (err) {
-            console.error('Error reading webhook:', err)
-            reject(err)
-          } else {
-            console.log('Webhook read:', row)
-            resolve(row)
-          }
-        }
-      )
-    })
+    try {
+      const row = this.db
+        .prepare(`SELECT * FROM ${this.webhooksTableName} WHERE webhook_id = ?`)
+        .get(webhookId) as WebhookType | undefined
+
+      console.log('Webhook read:', row)
+      return row
+    } catch (err) {
+      console.error('Error reading webhook:', err)
+      throw err
+    }
   },
 
   update: async function (webhookId: string, updates: WebhookUpdate): Promise<void> {
@@ -125,25 +122,20 @@ export const Webhook = {
     await this.ready
     if (!this.db) throw new Error('Database not initialized')
 
-    return new Promise((resolve, reject) => {
+    try {
       const updateColumns = Object.keys(updates)
         .map((key) => `${key} = ?`)
         .join(', ')
       const updateValues = Object.values(updates)
 
-      this.db!.run(
-        `UPDATE ${this.webhooksTableName} SET ${updateColumns} WHERE webhook_id = ?`,
-        [...updateValues, webhookId],
-        (err: Error | null) => {
-          if (err) {
-            console.error('Error updating webhook:', err)
-            reject(err)
-          } else {
-            console.log('Webhook updated:', webhookId)
-            resolve()
-          }
-        }
-      )
-    })
+      this.db
+        .prepare(`UPDATE ${this.webhooksTableName} SET ${updateColumns} WHERE webhook_id = ?`)
+        .run(...updateValues, webhookId)
+
+      console.log('Webhook updated:', webhookId)
+    } catch (err) {
+      console.error('Error updating webhook:', err)
+      throw err
+    }
   }
 }

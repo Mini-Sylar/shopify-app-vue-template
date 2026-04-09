@@ -1,5 +1,7 @@
-import { Database } from 'sqlite3'
+import BetterSqlite3 from 'better-sqlite3'
 import { User as UserType } from '../../types/models.type.js'
+
+type BetterSQLiteDatabase = InstanceType<typeof BetterSqlite3>
 
 interface UserCreate {
   shop: string
@@ -11,7 +13,7 @@ interface UserUpdate {
 
 export const User = {
   userTableName: 'users_dev',
-  db: null as Database | null,
+  db: null as BetterSQLiteDatabase | null,
   ready: null as Promise<void> | null,
 
   create: async function (data: UserCreate): Promise<UserType> {
@@ -69,8 +71,8 @@ export const User = {
     return Array.isArray(rows) && rows.length === 1
   },
 
-  /* Initializes the connection with the app's sqlite3 database */
-  init: async function (db: Database): Promise<void> {
+  /* Initializes the connection with the app's better-sqlite3 database */
+  init: async function (db: BetterSQLiteDatabase): Promise<void> {
     console.log(`initiating Dev User Model: ${this.userTableName}`)
     this.db = db
     if (!this.db) {
@@ -98,13 +100,13 @@ export const User = {
         reject(new Error('Database not initialized'))
         return
       }
-      this.db.all(sql, params, (err: Error | null, result: any) => {
-        if (err) {
-          reject(err)
-          return
-        }
+      try {
+        const statement = this.db.prepare(sql)
+        const result = statement.reader ? statement.all(...params) : statement.run(...params)
         resolve(result)
-      })
+      } catch (err) {
+        reject(err)
+      }
     })
   }
 }
