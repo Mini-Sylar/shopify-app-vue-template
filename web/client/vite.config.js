@@ -41,7 +41,33 @@ if (host === 'localhost') {
 
 export default defineConfig({
   root: dirname(fileURLToPath(import.meta.url)),
-  plugins: [vue()],
+  plugins: [
+    {
+      name: 'vite-plugin-replace-shopify-api-key',
+      transformIndexHtml() {
+        return {
+          tags: [
+            {
+              injectTo: 'head-prepend',
+              tag: 'meta',
+              attrs: {
+                name: 'shopify-api-key',
+                content: process.env.SHOPIFY_API_KEY
+              }
+            },
+            {
+              injectTo: 'head-prepend',
+              tag: 'script',
+              attrs: {
+                src: 'https://cdn.shopify.com/shopifycloud/app-bridge.js'
+              }
+            }
+          ]
+        }
+      }
+    },
+    vue()
+  ],
   define: {
     'process.env.SHOPIFY_API_KEY': JSON.stringify(process.env.SHOPIFY_API_KEY)
   },
