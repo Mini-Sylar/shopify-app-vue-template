@@ -35,16 +35,14 @@ const router = createRouter({
 })
 
 // i18n navigation guard
-router.beforeEach(async (to, _from, next) => {
-  /**
-   * @type {string} locale
-   */
+router.beforeEach(async (to) => {
   const paramsLocale = Array.isArray(to.params.locale) ? to.params.locale[0] : to.params.locale
   const locale =
     localStorage.getItem('app_locale') || i18n.global.locale || i18n.global.fallbackLocale
+
   // use locale if paramsLocale is not in SUPPORT_LOCALES
   if (!SUPPORT_LOCALES.includes(paramsLocale)) {
-    return next(`/${locale}`)
+    return `/${locale}`
   }
 
   // load locale messages
@@ -54,7 +52,6 @@ router.beforeEach(async (to, _from, next) => {
 
   // set i18n language
   setI18nLanguage(i18n, paramsLocale)
-  return next()
 })
 
 export default router

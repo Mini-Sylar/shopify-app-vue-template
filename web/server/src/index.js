@@ -17,6 +17,7 @@ const STATIC_PATH =
     : `${process.cwd()}/../client/`
 
 const app = express()
+app.use(express.raw({ type: 'application/json' }))
 
 // Set up Shopify authentication and webhook handling
 app.get(shopify.config.auth.path, shopify.auth.begin())
@@ -28,19 +29,18 @@ app.get(
 )
 app.post(
   shopify.config.webhooks.path,
-  express.raw({ type: '*/*' }),
   validateWebhookRequest,
   shopify.processWebhooks({ webhookHandlers: WebhookHandlers })
 )
 
 // If you are adding routes outside of the /api path, remember to
 // also add a proxy rule for them in web/client/vite.config.js
-app.use('/api/*', shopify.validateAuthenticatedSession())
+app.use('/api/{*path}', shopify.validateAuthenticatedSession())
 app.use(express.json())
 app.use('/api/products', productsRoutes)
 app.use(shopify.cspHeaders())
 app.use(serveStatic(STATIC_PATH, { index: false }))
-app.use('/*', shopify.ensureInstalledOnShop(), (_req, res) => {
+app.use('/{*path}', shopify.ensureInstalledOnShop(), (_req, res) => {
   res
     .status(200)
     .set('Content-Type', 'text/html')

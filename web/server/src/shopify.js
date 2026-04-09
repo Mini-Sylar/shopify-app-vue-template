@@ -1,6 +1,6 @@
 import { BillingInterval, ApiVersion } from '@shopify/shopify-api'
 import { shopifyApp } from '@shopify/shopify-app-express'
-import { SQLiteSessionStorage } from '@shopify/shopify-app-session-storage-sqlite'
+import { BetterSQLiteSessionStorage } from '@minisylar/shopify-app-session-storage-better-sqlite'
 // import { restResources } from "@shopify/shopify-api/rest/admin/2024-10";
 import { DB_PATH, initDatabase } from './database/database.js'
 
@@ -31,7 +31,7 @@ const shopify = shopifyApp({
   webhooks: {
     path: '/api/webhooks'
   },
-  sessionStorage: new SQLiteSessionStorage(DB_PATH) // This should be replaced with your preferred storage strategy
+  sessionStorage: new BetterSQLiteSessionStorage(DB_PATH) // This should be replaced with your preferred storage strategy
 })
 
 export default shopify

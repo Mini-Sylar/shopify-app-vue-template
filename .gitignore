@@ -34,6 +34,8 @@ web/server/src/database/database.sqlite
 shopify.app.toml
 *.sqlite
 *.sqlite3
+*.sqlite-shm
+*.sqlite-wal
 *.db
 web/server/src/database/database.sqlite
 
