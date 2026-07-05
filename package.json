@@ -28,6 +28,9 @@
     "client:uninstall": "npm uninstall --workspace web/client",
     "server:install": "npm install --workspace web/server",
     "server:uninstall": "npm uninstall --workspace web/server",
+    "version:patch": "npm version patch --workspaces --include-workspace-root --no-git-tag-version && npm install --package-lock-only",
+    "version:minor": "npm version minor --workspaces --include-workspace-root --no-git-tag-version && npm install --package-lock-only",
+    "version:major": "npm version major --workspaces --include-workspace-root --no-git-tag-version && npm install --package-lock-only",
     "typecheck": "npm-run-all2 --parallel typecheck:*",
     "typecheck:client": "npm run typecheck --workspace web/client",
     "typecheck:server": "npm run typecheck --workspace web/server"

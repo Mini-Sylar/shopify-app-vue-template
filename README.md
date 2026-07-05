@@ -52,8 +52,8 @@ root/
 │   ├── services/           # Shopify product creator
 │   ├── utils/              # Utilities (locale, webhook processing)
 │   ├── webhook/            # Webhook handlers (GDPR compliance included)
-│   ├── index.js            # Entry point
-│   └── shopify.js          # Shopify configuration
+│   ├── index.ts            # Entry point
+│   └── shopify.ts          # Shopify configuration
 ```
 
 - **Prettier** and **ESLint** configurations are now project-wide.
@@ -120,7 +120,7 @@ docker build --build-arg SHOPIFY_API_KEY=<your_api_key> --build-arg SHOPIFY_API_
 
 #### MySQL Example
 ```diff
-- import { SQLiteSessionStorage } from "@shopify/shopify-app-session-storage-sqlite";
+- import { BetterSQLiteSessionStorage } from "@minisylar/shopify-app-session-storage-better-sqlite";
 + import { MySQLSessionStorage } from "@shopify/shopify-app-session-storage-mysql";
 
 sessionStorage:
@@ -132,7 +132,7 @@ sessionStorage:
         process.env.DATABASE_PASSWORD,
         { connectionPoolLimit: 100 }
       )
-    : new SQLiteSessionStorage(DB_PATH),
+    : new BetterSQLiteSessionStorage(DB_PATH),
 ```
 
 #### PostgreSQL Example
