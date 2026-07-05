@@ -6,6 +6,9 @@
 
 A template for building Shopify apps using Vue.js as the frontend. It is based on the [Shopify App Node](https://github.com/Shopify/shopify-app-template-node) template.
 
+> [!TIP]
+> Want typed routes and auto-generated API documentation for the Express server? Check out [express-typed-router](https://github.com/Mini-Sylar/express-typed-router), a companion package from the same author.
+
 ---
 
 ## Documentation

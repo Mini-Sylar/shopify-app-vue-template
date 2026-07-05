@@ -26,6 +26,9 @@ config/tunnel.pid
 # vite build output
 dist/
 
+# TypeScript incremental build cache
+*.tsbuildinfo
+
 # extensions build output
 extensions/*/build
 

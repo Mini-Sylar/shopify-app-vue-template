@@ -35,7 +35,7 @@ const router = createRouter({
 })
 
 // i18n navigation guard (use return values instead of the deprecated next())
-router.beforeEach(async (to, _from) => {
+router.beforeEach(async (to) => {
   const paramsLocale = Array.isArray(to.params.locale)
     ? (to.params.locale[0] as (typeof SUPPORT_LOCALES)[number])
     : (to.params.locale as (typeof SUPPORT_LOCALES)[number])
