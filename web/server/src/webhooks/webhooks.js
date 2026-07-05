@@ -17,7 +17,7 @@ export default {
     deliveryMethod: DeliveryMethod.Http,
     callbackUrl: '/api/webhooks',
     callback: async (topic, shop, body, webhookId) => {
-      const payload = await processWebhook(topic, shop, body, webhookId)
+      const _payload = await processWebhook(topic, shop, body, webhookId)
       // ! Do something with the data
     }
   },
@@ -30,7 +30,7 @@ export default {
     deliveryMethod: DeliveryMethod.Http,
     callbackUrl: '/api/webhooks',
     callback: async (topic, shop, body, webhookId) => {
-      const payload = await processWebhook(topic, shop, body, webhookId)
+      const _payload = await processWebhook(topic, shop, body, webhookId)
       // Payload has the following shape:
       // {
       //   "shop_id": 954889,
@@ -62,7 +62,7 @@ export default {
     deliveryMethod: DeliveryMethod.Http,
     callbackUrl: '/api/webhooks',
     callback: async (topic, shop, body, webhookId) => {
-      const payload = await processWebhook(topic, shop, body, webhookId)
+      const _payload = await processWebhook(topic, shop, body, webhookId)
       // Payload has the following shape:
       // {
       //   "shop_id": 954889,
@@ -91,7 +91,7 @@ export default {
     deliveryMethod: DeliveryMethod.Http,
     callbackUrl: '/api/webhooks',
     callback: async (topic, shop, body, webhookId) => {
-      const payload = await processWebhook(topic, shop, body, webhookId)
+      const _payload = await processWebhook(topic, shop, body, webhookId)
       // Payload has the following shape:
       // {
       //   "shop_id": 954889,
@@ -103,7 +103,7 @@ export default {
     deliveryMethod: DeliveryMethod.Http,
     callbackUrl: '/api/webhooks',
     callback: async (topic, shop, body, webhookId) => {
-      const payload = await processWebhook(topic, shop, body, webhookId)
+      const _payload = await processWebhook(topic, shop, body, webhookId)
       // ! YOU CAN DELETE USER HERE
       // Payload has the following shape:
       // {

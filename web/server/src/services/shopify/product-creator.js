@@ -132,7 +132,9 @@ export default async function productCreator(session, count = DEFAULT_PRODUCTS_C
     }
   } catch (error) {
     if (error instanceof GraphqlQueryError) {
-      throw new Error(`${error.message}\n${JSON.stringify(error.response, null, 2)}`)
+      throw new Error(`${error.message}\n${JSON.stringify(error.response, null, 2)}`, {
+        cause: error
+      })
     } else {
       throw error
     }

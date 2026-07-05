@@ -6,6 +6,9 @@
 
 A template for building Shopify apps using Vue.js as the frontend. It is based on the [Shopify App Node](https://github.com/Shopify/shopify-app-template-node) template.
 
+> [!TIP]
+> Want typed routes and auto-generated API documentation for the Express server? Check out [express-typed-router](https://github.com/Mini-Sylar/express-typed-router), a companion package from the same author.
+
 ---
 
 ## Documentation
@@ -123,7 +126,7 @@ docker build --build-arg SHOPIFY_API_KEY=<your_api_key> --build-arg SHOPIFY_API_
 
 #### MySQL Example
 ```diff
-- import { SQLiteSessionStorage } from "@shopify/shopify-app-session-storage-sqlite";
+- import { BetterSQLiteSessionStorage } from "@minisylar/shopify-app-session-storage-better-sqlite";
 + import { MySQLSessionStorage } from "@shopify/shopify-app-session-storage-mysql";
 
 sessionStorage:
@@ -135,7 +138,7 @@ sessionStorage:
         process.env.DATABASE_PASSWORD,
         { connectionPoolLimit: 100 }
       )
-    : new SQLiteSessionStorage(DB_PATH),
+    : new BetterSQLiteSessionStorage(DB_PATH),
 ```
 
 #### PostgreSQL Example

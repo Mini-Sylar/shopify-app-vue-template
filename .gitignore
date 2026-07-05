@@ -37,7 +37,6 @@ shopify.app.toml
 *.sqlite-shm
 *.sqlite-wal
 *.db
-web/server/src/database/database.sqlite
 
 # Editor directories and files
 .idea

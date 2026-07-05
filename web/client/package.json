@@ -7,21 +7,19 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint src/**/*.{js,vue,ts} --fix --ignore-pattern .gitignore",
+    "lint": "eslint \"src/**/*.{js,vue}\" --fix --ignore-pattern .gitignore",
     "format": "prettier --write src/"
   },
   "dependencies": {
     "pinia": "^3.0.4",
-    "vue": "^3.5.32",
-    "vue-i18n": "^11.3.2",
-    "vue-router": "^5.0.4"
+    "vue": "^3.5.39",
+    "vue-i18n": "^11.4.6",
+    "vue-router": "^5.1.0"
   },
   "devDependencies": {
-    "eslint-plugin-vue": "^10.8.0",
-    "@vue/eslint-config-prettier": "^10.2.0",
-    "@rushstack/eslint-patch": "^1.16.1",
-    "@shopify/app-bridge-types": "^0.7.0",
-    "@vitejs/plugin-vue": "^6.0.5",
-    "vite": "^8.0.8"
+    "eslint-plugin-vue": "^10.9.2",
+    "@shopify/app-bridge-types": "^0.7.1",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "vite": "^8.1.3"
   }
 }

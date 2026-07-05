@@ -28,7 +28,7 @@ export default [
   js.configs.recommended,
   {
     rules: {
-      'no-unused-vars': 'warn'
+      'no-unused-vars': ['warn', { varsIgnorePattern: '^_', argsIgnorePattern: '^_' }]
     }
   },
   ...pluginVue.configs['flat/essential']
