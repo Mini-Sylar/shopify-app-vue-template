@@ -12,24 +12,24 @@
     "typecheck": "vue-tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
-    "pinia": "^3.0.4",
-    "vue": "^3.5.39",
-    "vue-i18n": "^11.4.6",
-    "vue-router": "^5.1.0"
+    "pinia": "^4.0.2",
+    "vue": "^3.5.40",
+    "vue-i18n": "^11.4.8",
+    "vue-router": "^5.2.0"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.5",
-    "@types/node": "^26.1.0",
-    "@vitejs/plugin-vue": "^6.0.7",
-    "@shopify/app-bridge-types": "^0.7.1",
+    "@types/node": "^26.1.2",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "@shopify/app-bridge-types": "^0.7.2",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.9.0",
     "@vue/tsconfig": "^0.9.1",
-    "eslint-plugin-vue": "~10.9.2",
+    "eslint-plugin-vue": "~10.10.0",
     "jiti": "^2.7.0",
     "typescript": "~6.0.3",
-    "vite": "^8.1.3",
-    "vite-plugin-vue-devtools": "^8.1.5",
-    "vue-tsc": "^3.3.6"
+    "vite": "^8.2.0",
+    "vite-plugin-vue-devtools": "^8.2.1",
+    "vue-tsc": "^3.3.9"
   }
 }
