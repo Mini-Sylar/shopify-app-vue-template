@@ -36,11 +36,17 @@
     "typecheck:server": "npm run typecheck --workspace web/server"
   },
   "optionalDependencies": {
-    "@shopify/cli": "^4.6.0"
+    "@shopify/cli": "^4.6.1"
   },
   "devDependencies": {
-    "eslint": "^10.8.0",
+    "eslint": "^10.8.1",
     "prettier": "^3.9.6",
     "npm-run-all2": "^9.0.3"
+  },
+  "allowScripts": {
+    "@swc/core@1.15.47": true,
+    "better-sqlite3@12.11.1": true,
+    "better-sqlite3@13.0.3": true,
+    "esbuild@0.28.1": true
   }
 }

@@ -31,7 +31,10 @@ const shopify = shopifyApp({
   webhooks: {
     path: '/api/webhooks'
   },
-  sessionStorage: new BetterSQLiteSessionStorage(DB_PATH) // This should be replaced with your preferred storage strategy
+  sessionStorage: new BetterSQLiteSessionStorage(DB_PATH), // This should be replaced with your preferred storage strategy
+  future: {
+    tokenExchange: true
+  }
 })
 
 export default shopify
