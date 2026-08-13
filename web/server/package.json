@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@shopify/shopify-app-express": "^8.0.0",
-    "@minisylar/shopify-app-session-storage-better-sqlite": "^1.1.3",
+    "@minisylar/shopify-app-session-storage-better-sqlite": "^2.0.1",
     "better-sqlite3": "^13.0.3",
     "compression": "^1.8.1",
     "cross-env": "^10.1.0",
